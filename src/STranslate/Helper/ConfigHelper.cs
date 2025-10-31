@@ -426,7 +426,7 @@ public class ConfigHelper
         if (CurrentConfig is null)
             return isSuccess;
 
-        CurrentConfig.ReplaceProp = model.ReplaceProp;
+        CurrentConfig.ReplaceProp.CopyFrom(model.ReplaceProp);
 
         WriteConfig(CurrentConfig);
         isSuccess = true;
@@ -1160,12 +1160,20 @@ public class ReplaceConverter : JsonConverter<ReplaceProp>
         var rate = jsonObject["AutoScale"]!.Value<double>();
         var detectType = jsonObject["DetectType"]!.Value<int>();
         var targetLang = jsonObject["TargetLang"]!.Value<int>();
+        var sourceLangIfAuto = jsonObject["SourceLangIfAuto"]!.Value<int>();
+        var targetLangIfPrimary = jsonObject["TargetLangIfPrimary"]!.Value<int>();
+        var targetLangIfNotPrimary = jsonObject["TargetLangIfNotPrimary"]!.Value<int>();
+        var primaryLanguage = jsonObject["PrimaryLanguage"]!.Value<int>();
         var model = new ReplaceProp
         {
             //ActiveService = ,
             AutoScale = rate,
             DetectType = (LangDetectType)detectType,
-            TargetLang = (LangEnum)targetLang
+            TargetLang = (LangEnum)targetLang,
+            SourceLangIfAuto = (LangEnum)sourceLangIfAuto,
+            TargetLangIfPrimary = (LangEnum)targetLangIfPrimary,
+            TargetLangIfNotPrimary = (LangEnum)targetLangIfNotPrimary,
+            PrimaryLanguage = (LangEnum)primaryLanguage,
         };
 
         var obj = jsonObject["ActiveService"]?.Value<object>();
@@ -1177,10 +1185,47 @@ public class ReplaceConverter : JsonConverter<ReplaceProp>
         return model;
     }
 
-    public override void WriteJson(JsonWriter writer, ReplaceProp? value, JsonSerializer serializer)
-    {
-        throw new NotImplementedException();
-    }
+        public override void WriteJson(JsonWriter writer, ReplaceProp? value, JsonSerializer serializer)
+
+        {
+
+            JObject jo = new JObject();
+
+            jo.Add("AutoScale", value?.AutoScale);
+
+            jo.Add("DetectType", (int)(value?.DetectType ?? LangDetectType.Local));
+
+            jo.Add("SourceLang", (int)(value?.SourceLang ?? LangEnum.auto));
+
+            jo.Add("TargetLang", (int)(value?.TargetLang ?? LangEnum.auto));
+
+            jo.Add("SourceLangIfAuto", (int)(value?.SourceLangIfAuto ?? LangEnum.en));
+
+            jo.Add("TargetLangIfPrimary", (int)(value?.TargetLangIfPrimary ?? LangEnum.en));
+
+            jo.Add("TargetLangIfNotPrimary", (int)(value?.TargetLangIfNotPrimary ?? LangEnum.zh_cn));
+
+            jo.Add("PrimaryLanguage", (int)(value?.PrimaryLanguage ?? LangEnum.zh_cn));
+
+    
+
+            if (value?.ActiveService != null)
+
+            {
+
+                // ActiveService 需要特殊处理，因为它是一个接口
+
+                JObject serviceObject = JObject.FromObject(value.ActiveService, serializer);
+
+                jo.Add("ActiveService", serviceObject);
+
+            }
+
+    
+
+            jo.WriteTo(writer);
+
+        }
 }
 
 public class TranslatorConverter : JsonConverter<ITranslator>
