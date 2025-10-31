@@ -291,8 +291,9 @@
     <system:String x:Key="Common.HistorySize.None">Не сохранять</system:String>
     <system:String x:Key="Common.SilentOcrLang">Язык тихого OCR/перевода скриншотов</system:String>
     <system:String x:Key="Common.SourceLangIfAuto">Язык для использования при автоопределении</system:String>
-    <system:String x:Key="Common.TargetLangIfSourceZh">Целевой язык, когда исходный - русский</system:String>
-    <system:String x:Key="Common.TargetLangIfSourceNotZh">Целевой язык, когда исходный - не русский</system:String>
+    <system:String x:Key="Common.PrimaryLanguage">Основной язык</system:String>
+    <system:String x:Key="Common.TargetLangIfPrimary">Целевой язык, когда исходный - основной</system:String>
+    <system:String x:Key="Common.TargetLangIfNotPrimary">Целевой язык, когда исходный - не основной</system:String>
     <system:String x:Key="Common.HttpTimeout">Тайм-аут запроса (секунды)</system:String>
 
     <!--  网络配置  -->
@@ -415,8 +416,9 @@
     <system:String x:Key="Tooltip.HistorySizeTip">Максимальное количество записей в истории</system:String>
     <system:String x:Key="Tooltip.SilentOcrLangTip">Язык для тихого OCR/перевода скриншотов&#13;Можно быстро переключить с помощью значка в главном интерфейсе</system:String>
     <system:String x:Key="Tooltip.SourceLangIfAutoTip">Язык, который будет использоваться, если определение по-прежнему возвращает «авто»&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
-    <system:String x:Key="Tooltip.TargetLangIfSourceZhTip">Язык, который будет использоваться, если цель — «авто», а источник — русский</system:String>
-    <system:String x:Key="Tooltip.TargetLangIfSourceNotZhTip">Язык, который будет использоваться, если цель — «авто», а источник — не русский</system:String>
+    <system:String x:Key="Tooltip.PrimaryLanguageTip">Исходный язык, к которому применяется особое правило</system:String>
+    <system:String x:Key="Tooltip.TargetLangIfPrimaryTip">Язык, который будет использоваться, если цель — «авто», а источник — основной</system:String>
+    <system:String x:Key="Tooltip.TargetLangIfNotPrimaryTip">Язык, который будет использоваться, если цель — «авто», а источник — не основной</system:String>
     <system:String x:Key="Tooltip.HttpTimeoutTip">Тайм-аут для запросов к сервисам в секундах</system:String>
     <system:String x:Key="Tooltip.ExternalCallTip">Включить ли внешние вызовы служб</system:String>
     <system:String x:Key="Tooltip.ExternalCallPortTip">Настроить порт службы для внешних вызовов</system:String>

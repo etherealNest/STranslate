@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -377,14 +378,24 @@ public partial class CommonViewModel : ObservableObject
     ///     * 原始语种识别为中文/中文繁体/中文粤语
     ///     * 目标语种使用该配置
     /// </summary>
-    [ObservableProperty] private LangEnum _targetLangIfSourceZh = ConfigHelper.CurrentConfig?.TargetLangIfSourceZh ?? LangEnum.en;
+    [ObservableProperty] private LangEnum _targetLangIfPrimary = ConfigHelper.CurrentConfig?.TargetLangIfPrimary ?? LangEnum.en;
 
     /// <summary>
     ///     目标语种为自动时
     ///     * 原始语种识别为非中文
     ///     * 目标语种使用该配置
     /// </summary>
-    [ObservableProperty] private LangEnum _targetLangIfSourceNotZh = ConfigHelper.CurrentConfig?.TargetLangIfSourceNotZh ?? LangEnum.zh_cn;
+    [ObservableProperty] private LangEnum _targetLangIfNotPrimary = ConfigHelper.CurrentConfig?.TargetLangIfNotPrimary ?? LangEnum.zh_cn;
+
+    /// <summary>
+    ///     首选语言
+    /// </summary>
+    [ObservableProperty] private LangEnum _primaryLanguage = ConfigHelper.CurrentConfig?.PrimaryLanguage ?? LangEnum.zh_cn;
+
+    /// <summary>
+    ///     首选语言列表
+    /// </summary>
+    [ObservableProperty] private ObservableCollection<EnumerationMember> _primaryLanguages = [];
 
     /// <summary>
     ///     调用系统剪贴板来插入结果
@@ -434,6 +445,11 @@ public partial class CommonViewModel : ObservableObject
 
         // 加载历史记录类型
         LoadHistorySizeType();
+
+        // 加载首选语言列表
+        PrimaryLanguages.Add(new EnumerationMember { Value = LangEnum.zh_cn, Description = AppLanguageManager.GetString("LangEnum.zh_cn") });
+        PrimaryLanguages.Add(new EnumerationMember { Value = LangEnum.en, Description = AppLanguageManager.GetString("LangEnum.en") });
+        PrimaryLanguages.Add(new EnumerationMember { Value = LangEnum.ru, Description = AppLanguageManager.GetString("LangEnum.ru") });
     }
 
     public InputViewModel InputVm => Singleton<InputViewModel>.Instance;
@@ -595,8 +611,9 @@ public partial class CommonViewModel : ObservableObject
         IsOnlyShowRet = ConfigHelper.CurrentConfig?.IsOnlyShowRet ?? true;
         OcrImageQuality = ConfigHelper.CurrentConfig?.OcrImageQuality ?? OcrImageQualityEnum.Medium;
         SourceLangIfAuto = ConfigHelper.CurrentConfig?.SourceLangIfAuto ?? LangEnum.en;
-        TargetLangIfSourceZh = ConfigHelper.CurrentConfig?.TargetLangIfSourceZh ?? LangEnum.en;
-        TargetLangIfSourceNotZh = ConfigHelper.CurrentConfig?.TargetLangIfSourceNotZh ?? LangEnum.zh_cn;
+        TargetLangIfPrimary = ConfigHelper.CurrentConfig?.TargetLangIfPrimary ?? LangEnum.en;
+        TargetLangIfNotPrimary = ConfigHelper.CurrentConfig?.TargetLangIfNotPrimary ?? LangEnum.zh_cn;
+        PrimaryLanguage = ConfigHelper.CurrentConfig?.PrimaryLanguage ?? LangEnum.zh_cn;
         UsePasteOutput = ConfigHelper.CurrentConfig?.UsePasteOutput ?? false;
         HttpTimeout = ConfigHelper.CurrentConfig?.HttpTimeout ?? 10;
         AppLanguage = ConfigHelper.CurrentConfig?.AppLanguage ?? AppLanguageKind.zh_Hans_CN;

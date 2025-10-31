@@ -67,7 +67,20 @@ public class EnumerationExtension : MarkupExtension
     // 注册 Selector 以便在语言变更时刷新
     public static void RegisterSelector(Selector selector)
     {
-        _selectors.Add((new WeakReference<Selector>(selector), selector.SelectedValue.GetType()));
+        var type = selector.SelectedValue?.GetType();
+        if (type == null)
+        {
+            var firstItem = selector.ItemsSource?.Cast<object>().FirstOrDefault();
+            if (firstItem is EnumerationMember member)
+            {
+                type = member.Value?.GetType();
+            }
+        }
+
+        if (type != null)
+        {
+            _selectors.Add((new WeakReference<Selector>(selector), type));
+        }
     }
 
     public Type EnumType { get; set; }

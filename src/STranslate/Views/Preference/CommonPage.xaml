@@ -338,15 +338,29 @@
                                 </DockPanel>
 
                                 <DockPanel Margin="20,10">
-                                    <TextBlock Text="{DynamicResource Common.TargetLangIfSourceZh}" />
-                                    <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Tooltip.TargetLangIfSourceZhTip}" />
+                                    <TextBlock Text="{DynamicResource Common.PrimaryLanguage}" />
+                                    <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Tooltip.PrimaryLanguageTip}" />
                                     <ComboBox
                                         Height="30"
                                         HorizontalAlignment="Right"
                                         common:LangAwareSelector.IsLangAware="True"
                                         BorderThickness="1"
                                         DisplayMemberPath="Description"
-                                        SelectedValue="{Binding TargetLangIfSourceZh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        ItemsSource="{Binding PrimaryLanguages}"
+                                        SelectedValue="{Binding PrimaryLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        SelectedValuePath="Value" />
+                                </DockPanel>
+
+                                <DockPanel Margin="20,10">
+                                    <TextBlock Text="{DynamicResource Common.TargetLangIfPrimary}" />
+                                    <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Tooltip.TargetLangIfPrimaryTip}" />
+                                    <ComboBox
+                                        Height="30"
+                                        HorizontalAlignment="Right"
+                                        common:LangAwareSelector.IsLangAware="True"
+                                        BorderThickness="1"
+                                        DisplayMemberPath="Description"
+                                        SelectedValue="{Binding TargetLangIfPrimary, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                         SelectedValuePath="Value">
                                         <ComboBox.ItemsSource>
                                             <MultiBinding Converter="{StaticResource MultiLangFilterConverter}">
@@ -358,15 +372,15 @@
                                 </DockPanel>
 
                                 <DockPanel Margin="20,10">
-                                    <TextBlock Text="{DynamicResource Common.TargetLangIfSourceNotZh}" />
-                                    <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Tooltip.TargetLangIfSourceNotZhTip}" />
+                                    <TextBlock Text="{DynamicResource Common.TargetLangIfNotPrimary}" />
+                                    <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Tooltip.TargetLangIfNotPrimaryTip}" />
                                     <ComboBox
                                         Height="30"
                                         HorizontalAlignment="Right"
                                         common:LangAwareSelector.IsLangAware="True"
                                         BorderThickness="1"
                                         DisplayMemberPath="Description"
-                                        SelectedValue="{Binding TargetLangIfSourceNotZh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        SelectedValue="{Binding TargetLangIfNotPrimary, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                         SelectedValuePath="Value">
                                         <ComboBox.ItemsSource>
                                             <MultiBinding Converter="{StaticResource MultiLangFilterConverter}">

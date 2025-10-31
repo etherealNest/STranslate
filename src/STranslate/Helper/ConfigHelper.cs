@@ -353,8 +353,9 @@ public class ConfigHelper
         CurrentConfig.IsOnlyShowRet = model.IsOnlyShowRet;
         CurrentConfig.OcrImageQuality = model.OcrImageQuality;
         CurrentConfig.SourceLangIfAuto = model.SourceLangIfAuto;
-        CurrentConfig.TargetLangIfSourceZh = model.TargetLangIfSourceZh;
-        CurrentConfig.TargetLangIfSourceNotZh = model.TargetLangIfSourceNotZh;
+        CurrentConfig.TargetLangIfPrimary = model.TargetLangIfPrimary;
+        CurrentConfig.TargetLangIfNotPrimary = model.TargetLangIfNotPrimary;
+        CurrentConfig.PrimaryLanguage = model.PrimaryLanguage;
         CurrentConfig.UsePasteOutput = model.UsePasteOutput;
         CurrentConfig.HttpTimeout = model.HttpTimeout;
         CurrentConfig.AppLanguage = model.AppLanguage;
@@ -1016,8 +1017,9 @@ public class ConfigHelper
             IsHideLangWhenOnlyShowOutput = true,
             OcrImageQuality = OcrImageQualityEnum.Medium,
             SourceLangIfAuto = LangEnum.en,
-            TargetLangIfSourceZh = LangEnum.en,
-            TargetLangIfSourceNotZh = LangEnum.zh_cn,
+            TargetLangIfPrimary = LangEnum.en,
+            TargetLangIfNotPrimary = LangEnum.zh_cn,
+            PrimaryLanguage = LangEnum.zh_cn,
             UsePasteOutput = false,
             HttpTimeout = 10,
             AppLanguage = AppLanguageKind.zh_Hans_CN,

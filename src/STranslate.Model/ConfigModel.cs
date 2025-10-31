@@ -442,14 +442,19 @@ public class ConfigModel
     ///     * 原始语种识别为中文/中文繁体/中文粤语
     ///     * 目标语种使用该配置
     /// </summary>
-    public LangEnum TargetLangIfSourceZh { get; set; } = LangEnum.en;
+    public LangEnum TargetLangIfPrimary { get; set; } = LangEnum.en;
 
     /// <summary>
     ///     目标语种为自动时
     ///     * 原始语种识别为非中文
     ///     * 目标语种使用该配置
     /// </summary>
-    public LangEnum TargetLangIfSourceNotZh { get; set; } = LangEnum.ru;
+    public LangEnum TargetLangIfNotPrimary { get; set; } = LangEnum.zh_cn;
+
+    /// <summary>
+    ///     首选语言
+    /// </summary>
+    public LangEnum PrimaryLanguage { get; set; } = LangEnum.zh_cn;
 
     /// <summary>
     ///     调用系统剪贴板来插入结果
@@ -597,8 +602,9 @@ public class ConfigModel
             IsOnlyShowRet = IsOnlyShowRet,
             OcrImageQuality = OcrImageQuality,
             SourceLangIfAuto = SourceLangIfAuto,
-            TargetLangIfSourceZh = TargetLangIfSourceZh,
-            TargetLangIfSourceNotZh = TargetLangIfSourceNotZh,
+            TargetLangIfPrimary = TargetLangIfPrimary,
+            TargetLangIfNotPrimary = TargetLangIfNotPrimary,
+            PrimaryLanguage = PrimaryLanguage,
             UsePasteOutput = UsePasteOutput,
             HttpTimeout = HttpTimeout,
             AppLanguage = AppLanguage,

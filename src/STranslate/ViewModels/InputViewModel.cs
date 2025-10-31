@@ -443,9 +443,9 @@ copy:
         source = identify;
 
         if (target == LangEnum.auto)
-            target = identify is LangEnum.ru
-                ? CnfHelper.CurrentConfig?.TargetLangIfSourceZh ?? LangEnum.en
-                : CnfHelper.CurrentConfig?.TargetLangIfSourceNotZh ?? LangEnum.ru;
+            target = identify == (CnfHelper.CurrentConfig?.PrimaryLanguage ?? LangEnum.zh_cn)
+                ? CnfHelper.CurrentConfig?.TargetLangIfPrimary ?? LangEnum.en
+                : CnfHelper.CurrentConfig?.TargetLangIfNotPrimary ?? LangEnum.zh_cn;
 
         return (source, target);
     }
