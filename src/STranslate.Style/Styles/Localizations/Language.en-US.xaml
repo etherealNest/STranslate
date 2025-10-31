@@ -648,10 +648,12 @@
     <system:String x:Key="Replace.AutoDetectType.Tooltip">Only for local detection of Chinese-English: the ratio of English characters to total characters</system:String>
     <system:String x:Key="Replace.SourceLangIfAuto">Language to Use When Auto-detection</system:String>
     <system:String x:Key="Replace.SourceLangIfAuto.Tooltip">Language to use if detection still returns 'auto'&#13;Only triggered when online detection service returns an error</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceZh">Target Language When Source is Chinese</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceZh.Tooltip">Language to use if target is auto and source is Chinese&#13;Only triggered when online detection service returns an error</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceNotZh">Target Language When Source is Not Chinese</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceNotZh.Tooltip">Language to use if target is auto and source is not Chinese&#13;Only triggered when online detection service returns an error</system:String>
+    <system:String x:Key="Replace.PrimaryLanguage">Primary Language</system:String>
+    <system:String x:Key="Replace.PrimaryLanguage.Tooltip">The source language to which the special rule applies</system:String>
+    <system:String x:Key="Replace.TargetLangIfPrimary">Target Language When Source is Primary</system:String>
+    <system:String x:Key="Replace.TargetLangIfPrimary.Tooltip">Language to use if target is auto and source is Primary&#13;Only triggered when online detection service returns an error</system:String>
+    <system:String x:Key="Replace.TargetLangIfNotPrimary">Target Language When Source is Not Primary</system:String>
+    <system:String x:Key="Replace.TargetLangIfNotPrimary.Tooltip">Language to use if target is auto and source is not Primary&#13;Only triggered when online detection service returns an error</system:String>
 
     <!--#endregion-->
 

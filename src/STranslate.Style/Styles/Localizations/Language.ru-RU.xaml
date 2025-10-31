@@ -648,10 +648,12 @@
     <system:String x:Key="Replace.AutoDetectType.Tooltip">Только для локального определения китайско-английского: отношение английских символов к общему количеству символов</system:String>
     <system:String x:Key="Replace.SourceLangIfAuto">Язык для использования при автоопределении</system:String>
     <system:String x:Key="Replace.SourceLangIfAuto.Tooltip">Язык, который будет использоваться, если определение по-прежнему возвращает «авто»&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceZh">Целевой язык, когда исходный — китайский</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceZh.Tooltip">Язык, который будет использоваться, если цель — авто, а источник — китайский&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceNotZh">Целевой язык, когда исходный — не китайский</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceNotZh.Tooltip">Язык, который будет использоваться, если цель — авто, а источник — не китайский&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
+    <system:String x:Key="Replace.PrimaryLanguage">Основной язык</system:String>
+    <system:String x:Key="Replace.PrimaryLanguage.Tooltip">Исходный язык, к которому применяется особое правило</system:String>
+    <system:String x:Key="Replace.TargetLangIfPrimary">Целевой язык, когда исходный - основной</system:String>
+    <system:String x:Key="Replace.TargetLangIfPrimary.Tooltip">Язык, который будет использоваться, если цель — авто, а источник — основной&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
+    <system:String x:Key="Replace.TargetLangIfNotPrimary">Целевой язык, когда исходный - не основной</system:String>
+    <system:String x:Key="Replace.TargetLangIfNotPrimary.Tooltip">Язык, который будет использоваться, если цель — авто, а источник — не основной&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
 
     <!--#endregion-->
 

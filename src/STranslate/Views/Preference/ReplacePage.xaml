@@ -149,8 +149,22 @@
                         </DockPanel>
 
                         <DockPanel Margin="20,10">
-                            <TextBlock Text="{DynamicResource Replace.TargetLangIfSourceZh}" />
-                            <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Replace.TargetLangIfSourceZh.Tooltip}" />
+                            <TextBlock Text="{DynamicResource Replace.PrimaryLanguage}" />
+                            <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Replace.PrimaryLanguage.Tooltip}" />
+                            <ComboBox
+                                Height="30"
+                                HorizontalAlignment="Right"
+                                common:LangAwareSelector.IsLangAware="True"
+                                BorderThickness="1"
+                                DisplayMemberPath="Description"
+                                ItemsSource="{Binding PrimaryLanguages}"
+                                SelectedValue="{Binding ReplaceProp.PrimaryLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedValuePath="Value" />
+                        </DockPanel>
+
+                        <DockPanel Margin="20,10">
+                            <TextBlock Text="{DynamicResource Replace.TargetLangIfPrimary}" />
+                            <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Replace.TargetLangIfPrimary.Tooltip}" />
                             <ComboBox
                                 Name="TargetLangIfSourceZhCb"
                                 Height="30"
@@ -158,7 +172,7 @@
                                 common:LangAwareSelector.IsLangAware="True"
                                 BorderThickness="1"
                                 DisplayMemberPath="Description"
-                                SelectedValue="{Binding ReplaceProp.TargetLangIfSourceZh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedValue="{Binding ReplaceProp.TargetLangIfPrimary, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                 SelectedValuePath="Value">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{StaticResource MultiLangFilterConverter}">
@@ -170,8 +184,8 @@
                         </DockPanel>
 
                         <DockPanel Margin="20,10">
-                            <TextBlock Text="{DynamicResource Replace.TargetLangIfSourceNotZh}" />
-                            <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Replace.TargetLangIfSourceNotZh.Tooltip}" />
+                            <TextBlock Text="{DynamicResource Replace.TargetLangIfNotPrimary}" />
+                            <TextBlock Style="{DynamicResource InfoTextBlock}" ToolTip="{DynamicResource Replace.TargetLangIfNotPrimary.Tooltip}" />
                             <ComboBox
                                 Name="TargetLangIfSourceNotZhCb"
                                 Height="30"
@@ -179,7 +193,7 @@
                                 common:LangAwareSelector.IsLangAware="True"
                                 BorderThickness="1"
                                 DisplayMemberPath="Description"
-                                SelectedValue="{Binding ReplaceProp.TargetLangIfSourceNotZh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                SelectedValue="{Binding ReplaceProp.TargetLangIfNotPrimary, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                 SelectedValuePath="Value">
                                 <ComboBox.ItemsSource>
                                     <MultiBinding Converter="{StaticResource MultiLangFilterConverter}">

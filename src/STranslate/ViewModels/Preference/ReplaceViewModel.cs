@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -18,6 +19,10 @@ public partial class ReplaceViewModel : ObservableObject
     private Guid? deletedSvc;
     public ReplaceViewModel()
     {
+        PrimaryLanguages.Add(new EnumerationMember { Value = LangEnum.zh_cn, Description = AppLanguageManager.GetString("LangEnum.zh_cn") });
+        PrimaryLanguages.Add(new EnumerationMember { Value = LangEnum.en, Description = AppLanguageManager.GetString("LangEnum.en") });
+        PrimaryLanguages.Add(new EnumerationMember { Value = LangEnum.ru, Description = AppLanguageManager.GetString("LangEnum.ru") });
+
         // View 上绑定结果从List中获取
         ReplaceProp.ActiveService = AllServices.FirstOrDefault(x => x.Identify == ReplaceProp.ActiveService?.Identify);
 
@@ -112,9 +117,9 @@ public partial class ReplaceViewModel : ObservableObject
         if (targetLang != LangEnum.auto)
             return (sourceLang, targetLang);
 
-        targetLang = sourceLang is LangEnum.zh_cn or LangEnum.zh_tw or LangEnum.yue
-            ? ReplaceProp.TargetLangIfSourceZh
-            : ReplaceProp.TargetLangIfSourceNotZh;
+        targetLang = sourceLang == ReplaceProp.PrimaryLanguage
+            ? ReplaceProp.TargetLangIfPrimary
+            : ReplaceProp.TargetLangIfNotPrimary;
         LogService.Logger.Debug($"ReplaceViewModel|DetectLanguageAsync 目标语种 自动 => {targetLang.GetDescription()}");
 
         return (sourceLang, targetLang);
@@ -164,6 +169,8 @@ public partial class ReplaceViewModel : ObservableObject
     #region Property
 
     [ObservableProperty] private BindingList<ITranslator> _allServices = Singleton<TranslatorViewModel>.Instance.CurTransServiceList;
+
+    [ObservableProperty] private ObservableCollection<EnumerationMember> _primaryLanguages = [];
 
     [ObservableProperty] private ReplaceProp _replaceProp = Singleton<ConfigHelper>.Instance.CurrentConfig?.ReplaceProp ?? new ReplaceProp();
 

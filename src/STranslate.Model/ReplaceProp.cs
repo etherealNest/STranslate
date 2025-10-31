@@ -21,17 +21,22 @@ public partial class ReplaceProp : ObservableObject
 
     /// <summary>
     ///     目标语种为自动时
-    ///     * 原始语种识别为中文/中文繁体/中文粤语
+    ///     * 原始语种识别为首选语言
     ///     * 目标语种使用该配置
     /// </summary>
-    [ObservableProperty] private LangEnum _targetLangIfSourceZh = LangEnum.en;
+    [ObservableProperty] private LangEnum _targetLangIfPrimary = LangEnum.en;
 
     /// <summary>
     ///     目标语种为自动时
-    ///     * 原始语种识别为非中文
+    ///     * 原始语种识别为非首选语言
     ///     * 目标语种使用该配置
     /// </summary>
-    [ObservableProperty] private LangEnum _targetLangIfSourceNotZh = LangEnum.zh_cn;
+    [ObservableProperty] private LangEnum _targetLangIfNotPrimary = LangEnum.zh_cn;
+
+    /// <summary>
+    ///     首选语言
+    /// </summary>
+    [ObservableProperty] private LangEnum _primaryLanguage = LangEnum.zh_cn;
 
     public ReplaceProp Clone()
     {
@@ -43,8 +48,9 @@ public partial class ReplaceProp : ObservableObject
             SourceLang = SourceLang,
             TargetLang = TargetLang,
             SourceLangIfAuto = SourceLangIfAuto,
-            TargetLangIfSourceZh = TargetLangIfSourceZh,
-            TargetLangIfSourceNotZh = TargetLangIfSourceNotZh,
+            TargetLangIfPrimary = TargetLangIfPrimary,
+            TargetLangIfNotPrimary = TargetLangIfNotPrimary,
+            PrimaryLanguage = PrimaryLanguage,
         };
     }
 
@@ -63,7 +69,8 @@ public partial class ReplaceProp : ObservableObject
         SourceLang = source.SourceLang;
         TargetLang = source.TargetLang;
         SourceLangIfAuto = source.SourceLangIfAuto;
-        TargetLangIfSourceZh = source.TargetLangIfSourceZh;
-        TargetLangIfSourceNotZh = source.TargetLangIfSourceNotZh;
+        TargetLangIfPrimary = source.TargetLangIfPrimary;
+        TargetLangIfNotPrimary = source.TargetLangIfNotPrimary;
+        PrimaryLanguage = source.PrimaryLanguage;
     }
 }
