@@ -291,8 +291,9 @@
     <system:String x:Key="Common.HistorySize.None">不保存</system:String>
     <system:String x:Key="Common.SilentOcrLang">静默OCR/截图翻译语种</system:String>
     <system:String x:Key="Common.SourceLangIfAuto">语种识别为自动时使用</system:String>
-    <system:String x:Key="Common.TargetLangIfSourceZh">目标语种为自动且原始语种为中文时使用</system:String>
-    <system:String x:Key="Common.TargetLangIfSourceNotZh">目标语种为自动且原始语种为非中文时使用</system:String>
+    <system:String x:Key="Common.PrimaryLanguage">首选语言</system:String>
+    <system:String x:Key="Common.TargetLangIfPrimary">目标语种为自动且原始语种为首选语言时使用</system:String>
+    <system:String x:Key="Common.TargetLangIfNotPrimary">目标语种为自动且原始语种为非首选语言时使用</system:String>
     <system:String x:Key="Common.HttpTimeout">请求超时时间(秒)</system:String>
 
     <!--  网络配置  -->
@@ -415,8 +416,9 @@
     <system:String x:Key="Tooltip.HistorySizeTip">历史记录最大数量设置</system:String>
     <system:String x:Key="Tooltip.SilentOcrLangTip">静默OCR/截图翻译时OCR的语种&#13;主界面可配置图标快捷切换</system:String>
     <system:String x:Key="Tooltip.SourceLangIfAutoTip">如果识别语种结果仍然为自动则使用该项指定语种&#13;仅当在线识别服务返回出错情况才会触发</system:String>
-    <system:String x:Key="Tooltip.TargetLangIfSourceZhTip">如果目标语种为自动且原始语种为中文时则使用该项指定语种</system:String>
-    <system:String x:Key="Tooltip.TargetLangIfSourceNotZhTip">如果目标语种为自动且原始语种为非中文时则使用该项指定语种</system:String>
+    <system:String x:Key="Tooltip.PrimaryLanguageTip">应用该特殊规则的源语言</system:String>
+    <system:String x:Key="Tooltip.TargetLangIfPrimaryTip">如果目标语种为自动且原始语种为首选语言时则使用该项指定语种</system:String>
+    <system:String x:Key="Tooltip.TargetLangIfNotPrimaryTip">如果目标语种为自动且原始语种为非首选语言时则使用该项指定语种</system:String>
     <system:String x:Key="Tooltip.HttpTimeoutTip">服务请求的超时时间，单位为秒</system:String>
     <system:String x:Key="Tooltip.ExternalCallTip">是否启用外部调用服务</system:String>
     <system:String x:Key="Tooltip.ExternalCallPortTip">配置服务端口进行外部调用</system:String>
@@ -646,10 +648,12 @@
     <system:String x:Key="Replace.AutoDetectType.Tooltip">仅针对 本地识别 中英文情况下英文字符占总字符数的比例</system:String>
     <system:String x:Key="Replace.SourceLangIfAuto">语种识别为自动时使用</system:String>
     <system:String x:Key="Replace.SourceLangIfAuto.Tooltip">如果识别语种结果仍然为自动则使用该项指定语种&#13;仅当在线识别服务返回出错情况才会触发</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceZh">目标语种为自动且原始语种为中文时使用</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceZh.Tooltip">如果目标语种为自动且原始语种为中文时则使用该项指定语种&#13;仅当在线识别服务返回出错情况才会触发</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceNotZh">目标语种为自动且原始语种为非中文时使用</system:String>
-    <system:String x:Key="Replace.TargetLangIfSourceNotZh.Tooltip">如果目标语种为自动且原始语种为非中文时则使用该项指定语种&#13;仅当在线识别服务返回出错情况才会触发</system:String>
+    <system:String x:Key="Replace.PrimaryLanguage">首选语言</system:String>
+    <system:String x:Key="Replace.PrimaryLanguage.Tooltip">应用该特殊规则的源语言</system:String>
+    <system:String x:Key="Replace.TargetLangIfPrimary">目标语种为自动且原始语种为首选语言时使用</system:String>
+    <system:String x:Key="Replace.TargetLangIfPrimary.Tooltip">如果目标语种为自动且原始语种为首选语言时则使用该项指定语种&#13;仅当在线识别服务返回出错情况才会触发</system:String>
+    <system:String x:Key="Replace.TargetLangIfNotPrimary">目标语种为自动且原始语种为非首选语言时使用</system:String>
+    <system:String x:Key="Replace.TargetLangIfNotPrimary.Tooltip">如果目标语种为自动且原始语种为非首选语言时则使用该项指定语种&#13;仅当在线识别服务返回出错情况才会触发</system:String>
 
     <!--#endregion-->
 
