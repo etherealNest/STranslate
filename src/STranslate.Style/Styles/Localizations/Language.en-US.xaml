@@ -291,8 +291,8 @@
     <system:String x:Key="Common.HistorySize.None">Don't Save</system:String>
     <system:String x:Key="Common.SilentOcrLang">Silent OCR/Screenshot Translation Language</system:String>
     <system:String x:Key="Common.SourceLangIfAuto">Language to Use When Auto-detection</system:String>
-    <system:String x:Key="Common.TargetLangIfSourceZh">Target Language When Source is Chinese</system:String>
-    <system:String x:Key="Common.TargetLangIfSourceNotZh">Target Language When Source is Not Chinese</system:String>
+    <system:String x:Key="Common.TargetLangIfSourceZh">Target Language When Source is Russian</system:String>
+    <system:String x:Key="Common.TargetLangIfSourceNotZh">Target Language When Source is Not Russian</system:String>
     <system:String x:Key="Common.HttpTimeout">Request Timeout (seconds)</system:String>
 
     <!--  网络配置  -->
@@ -415,8 +415,8 @@
     <system:String x:Key="Tooltip.HistorySizeTip">Maximum number of history records</system:String>
     <system:String x:Key="Tooltip.SilentOcrLangTip">Language for Silent OCR/Screenshot translation&#13;Can be quickly switched via icon in main interface</system:String>
     <system:String x:Key="Tooltip.SourceLangIfAutoTip">Language to use if detection still returns 'auto'&#13;Only triggered when online detection service returns an error</system:String>
-    <system:String x:Key="Tooltip.TargetLangIfSourceZhTip">Language to use if target is auto and source is Chinese</system:String>
-    <system:String x:Key="Tooltip.TargetLangIfSourceNotZhTip">Language to use if target is auto and source is not Chinese</system:String>
+    <system:String x:Key="Tooltip.TargetLangIfSourceZhTip">Language to use if target is auto and source is Russian</system:String>
+    <system:String x:Key="Tooltip.TargetLangIfSourceNotZhTip">Language to use if target is auto and source is not Russian</system:String>
     <system:String x:Key="Tooltip.HttpTimeoutTip">Timeout for service requests in seconds</system:String>
     <system:String x:Key="Tooltip.ExternalCallTip">Whether to enable external service calls</system:String>
     <system:String x:Key="Tooltip.ExternalCallPortTip">Configure service port for external calls</system:String>

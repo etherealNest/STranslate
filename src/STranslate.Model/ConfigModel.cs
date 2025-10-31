@@ -449,7 +449,7 @@ public class ConfigModel
     ///     * 原始语种识别为非中文
     ///     * 目标语种使用该配置
     /// </summary>
-    public LangEnum TargetLangIfSourceNotZh { get; set; } = LangEnum.zh_cn;
+    public LangEnum TargetLangIfSourceNotZh { get; set; } = LangEnum.ru;
 
     /// <summary>
     ///     调用系统剪贴板来插入结果
