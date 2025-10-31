@@ -1,0 +1,905 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!--#region Constant-->
+
+    <system:String x:Key="Constant.NeweastVersionInfo">Поздравляем! Вы используете последнюю версию!</system:String>
+    <system:String x:Key="Constant.Loading">Загрузка...</system:String>
+    <system:String x:Key="Constant.Unloading">Загрузка завершена...</system:String>
+    <system:String x:Key="Constant.PlaceHolderContent">Enter: Перевод/Кэш/nCtrl+Enter: Принудительный перевод/nShift+Enter: Новая строка</system:String>
+    <system:String x:Key="Constant.InputErrorContent">Для этой службы не найден кэш, нажмите Ctrl+Enter для обновления</system:String>
+    <system:String x:Key="Constant.HistoryErrorContent">Эта служба не вернула корректный ответ, нажмите Ctrl+Enter для обновления</system:String>
+
+    <!--#endregion-->
+
+    <!--#region 其他-->
+
+    <system:String x:Key="Confirm">Подтвердить</system:String>
+    <system:String x:Key="Cancel">Отмена</system:String>
+    <system:String x:Key="Yes">Да</system:String>
+    <system:String x:Key="No">Нет</system:String>
+    <system:String x:Key="Admin">[Админ]</system:String>
+    <system:String x:Key="Start">запущено...</system:String>
+
+    <!--#endregion-->
+
+    <!--#region Enum-->
+
+    <system:String x:Key="LangEnum.auto">Автоматически</system:String>
+    <system:String x:Key="LangEnum.zh_cn">Китайский</system:String>
+    <system:String x:Key="LangEnum.zh_tw">Традиционный китайский</system:String>
+    <system:String x:Key="LangEnum.yue">Кантонский</system:String>
+    <system:String x:Key="LangEnum.en">Английский</system:String>
+    <system:String x:Key="LangEnum.ja">Японский</system:String>
+    <system:String x:Key="LangEnum.ko">Корейский</system:String>
+    <system:String x:Key="LangEnum.fr">Французский</system:String>
+    <system:String x:Key="LangEnum.es">Испанский</system:String>
+    <system:String x:Key="LangEnum.ru">Русский</system:String>
+    <system:String x:Key="LangEnum.de">Немецкий</system:String>
+    <system:String x:Key="LangEnum.it">Итальянский</system:String>
+    <system:String x:Key="LangEnum.tr">Турецкий</system:String>
+    <system:String x:Key="LangEnum.pt_pt">Португальский</system:String>
+    <system:String x:Key="LangEnum.pt_br">Бразильский португальский</system:String>
+    <system:String x:Key="LangEnum.vi">Вьетнамский</system:String>
+    <system:String x:Key="LangEnum.id">Индонезийский</system:String>
+    <system:String x:Key="LangEnum.th">Тайский</system:String>
+    <system:String x:Key="LangEnum.ms">Малайский</system:String>
+    <system:String x:Key="LangEnum.ar">Арабский</system:String>
+    <system:String x:Key="LangEnum.hi">Хинди</system:String>
+    <system:String x:Key="LangEnum.mn_cy">Монгольский (кириллица)</system:String>
+    <system:String x:Key="LangEnum.mn_mo">Монгольский</system:String>
+    <system:String x:Key="LangEnum.km">Кхмерский</system:String>
+    <system:String x:Key="LangEnum.nb_no">Норвежский букмол</system:String>
+    <system:String x:Key="LangEnum.nn_no">Норвежский нюнорск</system:String>
+    <system:String x:Key="LangEnum.fa">Персидский</system:String>
+    <system:String x:Key="LangEnum.sv">Шведский</system:String>
+    <system:String x:Key="LangEnum.pl">Польский</system:String>
+    <system:String x:Key="LangEnum.nl">Голландский</system:String>
+    <system:String x:Key="LangEnum.uk">Украинский</system:String>
+
+    <system:String x:Key="ThemeType.Light">Светлая тема</system:String>
+    <system:String x:Key="ThemeType.Dark">Темная тема</system:String>
+    <system:String x:Key="ThemeType.FollowSystem">Как в системе</system:String>
+    <system:String x:Key="ThemeType.FollowApp">Как в приложении</system:String>
+
+    <system:String x:Key="LangDetectType.Local">Локально</system:String>
+    <system:String x:Key="LangDetectType.Baidu">Baidu</system:String>
+    <system:String x:Key="LangDetectType.Tencent">Tencent</system:String>
+    <system:String x:Key="LangDetectType.Niutrans">Niutrans</system:String>
+    <system:String x:Key="LangDetectType.Bing">Bing</system:String>
+    <system:String x:Key="LangDetectType.Yandex">Yandex</system:String>
+    <system:String x:Key="LangDetectType.Google">Google</system:String>
+    <system:String x:Key="LangDetectType.Microsoft">Microsoft</system:String>
+
+    <system:String x:Key="LineBreakHandlingMode.None">Не обрабатывать переносы строк</system:String>
+    <system:String x:Key="LineBreakHandlingMode.RemoveExtraLineBreak">Удалить лишние переносы строк</system:String>
+    <system:String x:Key="LineBreakHandlingMode.RemoveAllLineBreak">Удалить все переносы строк</system:String>
+    <system:String x:Key="LineBreakHandlingMode.RemoveAllLineBreakWithoutSpace">Удалить все переносы строк без пробелов</system:String>
+
+    <system:String x:Key="OcrImageQualityEnum.Low">Низкое</system:String>
+    <system:String x:Key="OcrImageQualityEnum.Medium">Среднее</system:String>
+    <system:String x:Key="OcrImageQualityEnum.High">Высокое</system:String>
+
+    <system:String x:Key="DoubleTapFuncEnum.InputFunc">Функция ввода</system:String>
+    <system:String x:Key="DoubleTapFuncEnum.ScreenFunc">Функция снимка экрана</system:String>
+    <system:String x:Key="DoubleTapFuncEnum.MouseHookFunc">Функция захвата мыши</system:String>
+    <system:String x:Key="DoubleTapFuncEnum.OCRFunc">Функция OCR</system:String>
+    <system:String x:Key="DoubleTapFuncEnum.ShowViewFunc">Функция отображения</system:String>
+    <system:String x:Key="DoubleTapFuncEnum.PreferenceFunc">Функция настроек</system:String>
+    <system:String x:Key="DoubleTapFuncEnum.ForbidShortcutFunc">Функция отключения ярлыков</system:String>
+    <system:String x:Key="DoubleTapFuncEnum.ExitFunc">Функция выхода</system:String>
+
+    <system:String x:Key="GlobalFontSizeEnum.ExtremelySmall">Очень маленький (14px)</system:String>
+    <system:String x:Key="GlobalFontSizeEnum.UltraSmall">Ультра маленький (15px)</system:String>
+    <system:String x:Key="GlobalFontSizeEnum.VerySmall">Очень маленький (16px)</system:String>
+    <system:String x:Key="GlobalFontSizeEnum.Small">Маленький (17px)</system:String>
+    <system:String x:Key="GlobalFontSizeEnum.General">Обычный (18px)</system:String>
+    <system:String x:Key="GlobalFontSizeEnum.Big">Большой (19px)</system:String>
+    <system:String x:Key="GlobalFontSizeEnum.VeryBig">Очень большой (20px)</system:String>
+    <system:String x:Key="GlobalFontSizeEnum.UltraBig">Ультра большой (21px)</system:String>
+    <system:String x:Key="GlobalFontSizeEnum.ExtremelyBig">Огромный (22px)</system:String>
+
+    <system:String x:Key="ProxyMethodEnum.NoProxy">Без прокси</system:String>
+    <system:String x:Key="ProxyMethodEnum.SystemProxy">Системный прокси</system:String>
+    <system:String x:Key="ProxyMethodEnum.Http">Http</system:String>
+    <system:String x:Key="ProxyMethodEnum.Socks5">Socks5</system:String>
+
+    <system:String x:Key="AnimationSpeedEnum.Slow">Медленно (300ms)</system:String>
+    <system:String x:Key="AnimationSpeedEnum.Middle">Средне (200ms)</system:String>
+    <system:String x:Key="AnimationSpeedEnum.Fast">Быстро (150ms)</system:String>
+
+    <system:String x:Key="BaiduOCRAction.accurate">Точный</system:String>
+    <system:String x:Key="BaiduOCRAction.accurate_basic">Точный базовый</system:String>
+    <system:String x:Key="BaiduOCRAction.general">Общий</system:String>
+    <system:String x:Key="BaiduOCRAction.general_basic">Общий базовый</system:String>
+
+    <system:String x:Key="TencentOCRAction.GeneralBasicOCR">Общий базовый OCR</system:String>
+    <system:String x:Key="TencentOCRAction.GeneralAccurateOCR">Общий точный OCR</system:String>
+
+    <system:String x:Key="VolcengineOCRAction.OCRNormal">Общий OCR</system:String>
+    <system:String x:Key="VolcengineOCRAction.MultiLanguageOCR">Многоязычный OCR</system:String>
+
+    <system:String x:Key="IconType.STranslate">Локальный</system:String>
+    <system:String x:Key="IconType.DeepL">DeepL</system:String>
+    <system:String x:Key="IconType.Baidu">Baidu</system:String>
+    <system:String x:Key="IconType.Google">Google</system:String>
+    <system:String x:Key="IconType.Iciba">iCiba</system:String>
+    <system:String x:Key="IconType.Youdao">Youdao</system:String>
+    <system:String x:Key="IconType.Bing">Bing</system:String>
+    <system:String x:Key="IconType.OpenAI">OpenAI</system:String>
+    <system:String x:Key="IconType.Gemini">Gemini</system:String>
+    <system:String x:Key="IconType.Tencent">Tencent</system:String>
+    <system:String x:Key="IconType.Ali">Ali</system:String>
+    <system:String x:Key="IconType.Niutrans">Niutrans</system:String>
+    <system:String x:Key="IconType.Caiyun">Caiyun</system:String>
+    <system:String x:Key="IconType.Microsoft">Microsoft</system:String>
+    <system:String x:Key="IconType.Volcengine">Volcengine</system:String>
+    <system:String x:Key="IconType.Ecdict">ECDict</system:String>
+    <system:String x:Key="IconType.Azure">Azure</system:String>
+    <system:String x:Key="IconType.Chatglm">ChatGLM</system:String>
+    <system:String x:Key="IconType.Linyi">Linyi</system:String>
+    <system:String x:Key="IconType.DeepSeek">DeepSeek</system:String>
+    <system:String x:Key="IconType.Groq">Groq</system:String>
+    <system:String x:Key="IconType.PaddleOCR">PaddleOCR</system:String>
+    <system:String x:Key="IconType.BaiduBce">BaiduBce</system:String>
+    <system:String x:Key="IconType.TencentOCR">TencentOCR</system:String>
+    <system:String x:Key="IconType.Ollama">Ollama</system:String>
+    <system:String x:Key="IconType.Kimi">Kimi</system:String>
+    <system:String x:Key="IconType.Lingva">Lingva</system:String>
+    <system:String x:Key="IconType.WeChat">WeChat</system:String>
+    <system:String x:Key="IconType.Claude">Claude</system:String>
+    <system:String x:Key="IconType.EuDict">EuDict</system:String>
+    <system:String x:Key="IconType.Yandex">Yandex</system:String>
+    <system:String x:Key="IconType.DeerAPI">DeerAPI</system:String>
+    <system:String x:Key="IconType.Grok">Grok</system:String>
+    <system:String x:Key="IconType.Bailian">Bailian</system:String>
+    <system:String x:Key="IconType.Transmart">Transmart</system:String>
+    <system:String x:Key="IconType.OpenRouter">OpenRouter</system:String>
+    <system:String x:Key="IconType.Maimemo">Maimemo</system:String>
+
+    <system:String x:Key="BackupType.Local">Локальный</system:String>
+    <system:String x:Key="BackupType.WebDav">WebDav</system:String>
+
+    <system:String x:Key="STranslateMode.Brower">Браузер</system:String>
+    <system:String x:Key="STranslateMode.IOS">IOS</system:String>
+
+    <system:String x:Key="StartModeKind.Normal">Обычный</system:String>
+    <system:String x:Key="StartModeKind.Admin">Администратор</system:String>
+    <system:String x:Key="StartModeKind.SkipUACAdmin">Администратор с пропуском UAC</system:String>
+
+    <!--#endregion-->
+
+    <!--#region Toast-->
+
+    <system:String x:Key="Toast.Copy">Копировать</system:String>
+    <system:String x:Key="Toast.Speak">Произнести</system:String>
+    <system:String x:Key="Toast.Result">Результат</system:String>
+    <system:String x:Key="Toast.DeleteSuccess">Успешно удалено</system:String>
+    <system:String x:Key="Toast.CopySuccess">Успешно скопировано</system:String>
+    <system:String x:Key="Toast.ClearSuccess">Успешно очищено</system:String>
+    <system:String x:Key="Toast.CopySnakeSuccess">Скопировано в snake_case</system:String>
+    <system:String x:Key="Toast.CopySmallHumpSuccess">Скопировано в camelCase</system:String>
+    <system:String x:Key="Toast.CopyLargeHumpSuccess">Скопировано в PascalCase</system:String>
+    <system:String x:Key="Toast.SpeakInputContent">Произнести введенный текст</system:String>
+    <system:String x:Key="Toast.AutoTransBack">Автоматический обратный перевод</system:String>
+    <system:String x:Key="Toast.Open">Открыть</system:String>
+    <system:String x:Key="Toast.Close">Закрыть</system:String>
+    <system:String x:Key="Toast.KeepAtListOneTranslator">Оставьте хотя бы один переводчик</system:String>
+    <system:String x:Key="Toast.NoOCR">OCR не включен</system:String>
+    <system:String x:Key="Toast.SaveSuccess">Успешно сохранено</system:String>
+    <system:String x:Key="Toast.SaveFailed">Не удалось сохранить</system:String>
+    <system:String x:Key="Toast.ResetConf">Сбросить настройки</system:String>
+    <system:String x:Key="Toast.SaveTo">Сохранено в</system:String>
+    <system:String x:Key="Toast.Success">Успешно</system:String>
+    <system:String x:Key="Toast.Failed">Не удалось</system:String>
+    <system:String x:Key="Toast.RemoveSpace">Удалить пробелы</system:String>
+    <system:String x:Key="Toast.RemoveLinebreak">Удалить переносы строк</system:String>
+    <system:String x:Key="Toast.EnableSticky">Закрепить наверху</system:String>
+    <system:String x:Key="Toast.DisableSticky">Открепить</system:String>
+    <system:String x:Key="Toast.PleaseSelectImg">Пожалуйста, выберите изображение</system:String>
+    <system:String x:Key="Toast.ClipboardNoImgRecently">В буфере обмена нет недавних изображений</system:String>
+    <system:String x:Key="Toast.NoQRCode">QR-код не найден</system:String>
+    <system:String x:Key="Toast.WordSelect">Выделение текста мышью</system:String>
+    <system:String x:Key="Toast.AutoTranslate">Автоматический перевод</system:String>
+    <system:String x:Key="Toast.IncrementalTranslate">Инкрементный перевод</system:String>
+    <system:String x:Key="Toast.Show">Скрыть</system:String>
+    <system:String x:Key="Toast.Hide">Показать</system:String>
+    <system:String x:Key="Toast.LangView">Языковая панель</system:String>
+    <system:String x:Key="Toast.Export">Экспорт</system:String>
+    <system:String x:Key="Toast.Import">Импорт</system:String>
+    <system:String x:Key="Toast.Add">Добавить</system:String>
+    <system:String x:Key="Toast.Clear">Очистить</system:String>
+    <system:String x:Key="Toast.PleaseCheckCnfOrLog">Проверьте конфигурацию или журналы</system:String>
+    <system:String x:Key="Toast.DeleteFailed">Не удалось удалить</system:String>
+    <system:String x:Key="Toast.DeleteAllSuccess">Все успешно удалено</system:String>
+    <system:String x:Key="Toast.SingleCharInfo">Один символ может повлиять на использование</system:String>
+    <system:String x:Key="Toast.DropPrompFile">Пожалуйста, перетащите файл подсказки</system:String>
+    <system:String x:Key="Toast.ImportEmpty">Содержимое пусто</system:String>
+    <system:String x:Key="Toast.NoSelectPrompt">Подсказка не выбрана</system:String>
+    <system:String x:Key="Toast.DownloadStart">Загрузка началась</system:String>
+    <system:String x:Key="Toast.DownloadComplete">Загрузка завершена</system:String>
+    <system:String x:Key="Toast.DownloadCancel">Загрузка отменена</system:String>
+    <system:String x:Key="Toast.DownloadException">Во время загрузки произошла ошибка</system:String>
+    <system:String x:Key="Toast.Decompress">Извлечение пакета данных</system:String>
+    <system:String x:Key="Toast.LoadDataSuccess">Пакет данных успешно загружен</system:String>
+    <system:String x:Key="Toast.DecompressFailed">Не удалось извлечь, попробуйте перезапустить</system:String>
+    <system:String x:Key="Toast.DataIntegrity">Целостность данных проверена</system:String>
+    <system:String x:Key="Toast.MissingData">Данные отсутствуют</system:String>
+    <system:String x:Key="Toast.DeleteFailedInfo">Не удалось удалить, попробуйте перезапустить</system:String>
+    <system:String x:Key="Toast.UnSupport">Не поддерживается</system:String>
+    <system:String x:Key="Toast.NoPaddleOCRData">Загрузите на странице PaddleOCR</system:String>
+    <system:String x:Key="Toast.VerifySuccess">Проверка прошла успешно</system:String>
+    <system:String x:Key="Toast.VerifyFailed">Проверка не удалась</system:String>
+    <system:String x:Key="Toast.QuerySuccess">Запрос выполнен успешно</system:String>
+    <system:String x:Key="Toast.QueryFailed">Не удалось выполнить запрос</system:String>
+    <system:String x:Key="Toast.QueryCanceled">Запрос отменен</system:String>
+    <system:String x:Key="Toast.TTSFailed">Не удалось преобразовать текст в речь</system:String>
+    <system:String x:Key="Toast.NoTTS">Служба TTS не включена</system:String>
+    <system:String x:Key="Toast.TTSNotEnd">Текущая речь не закончена</system:String>
+    <system:String x:Key="Toast.CheckVocabularyConf">Пожалуйста, проверьте конфигурацию словаря</system:String>
+    <system:String x:Key="Toast.RenameFailed">Не удалось переименовать</system:String>
+
+    <!--#endregion-->
+
+    <!--#region 首选项-->
+
+    <system:String x:Key="Preference.WindowTitleInTaskbar">Настройки STranslate</system:String>
+    <system:String x:Key="Preference.WindowTitle">Настройки</system:String>
+    <system:String x:Key="Preference.Navi.Common">Общие</system:String>
+    <system:String x:Key="Preference.Navi.Hotkey">Горячие клавиши</system:String>
+    <system:String x:Key="Preference.Navi.Service">Сервисы</system:String>
+    <system:String x:Key="Preference.Navi.Replace">Замена</system:String>
+    <system:String x:Key="Preference.Navi.History">История</system:String>
+    <system:String x:Key="Preference.Navi.Backup">Резервное копирование</system:String>
+    <system:String x:Key="Preference.Navi.About">О программе</system:String>
+
+    <system:String x:Key="Preference.Reset">Сбросить</system:String>
+    <system:String x:Key="Preference.Save">Сохранить</system:String>
+
+    <!--#endregion-->
+
+    <!--#region 设置相关-->
+
+    <!--#region Common 设置项-->
+    <system:String x:Key="Common.Title">Общие настройки</system:String>
+    <system:String x:Key="Common.AutoStart">Запускать при входе в Windows</system:String>
+    <system:String x:Key="Common.AppLanguage">Язык приложения</system:String>
+    <system:String x:Key="Common.StartMode">Режим запуска</system:String>
+    <system:String x:Key="Common.AutoCheckUpdate">Автоматически проверять обновления</system:String>
+    <system:String x:Key="Common.DownloadProxy">Канал загрузки ресурсов</system:String>
+    <system:String x:Key="Common.AutoTranslate">Автоматический перевод</system:String>
+    <system:String x:Key="Common.ThemeSelection">Выбор темы</system:String>
+    <system:String x:Key="Common.FontSelection">Выбор шрифта [WIE]</system:String>
+    <system:String x:Key="Common.GlobalFontSize">Глобальный размер шрифта [WIE]</system:String>
+    <system:String x:Key="Common.DisableGlobalHotkeys">Отключить глобальные горячие клавиши</system:String>
+    <system:String x:Key="Common.IgnoreHotkeysOnFullscreen">Игнорировать горячие клавиши в полноэкранном режиме</system:String>
+    <system:String x:Key="Common.OftenUsedLang">Часто используемые языки</system:String>
+    <system:String x:Key="Common.OftenUsedLangSetButton">Нажмите для установки</system:String>
+    <system:String x:Key="Common.LangDetect">Определение языка</system:String>
+    <system:String x:Key="Common.LangDetectRatio">Коэффициент определения языка (zh-en)</system:String>
+    <system:String x:Key="Common.WordPickingInterval">Интервал выбора слова</system:String>
+    <system:String x:Key="Common.DoubleTapTrayFunc">Функция двойного щелчка по значку в трее</system:String>
+    <system:String x:Key="Common.HistorySize">Размер истории</system:String>
+    <system:String x:Key="Common.HistorySize.50">50 записей</system:String>
+    <system:String x:Key="Common.HistorySize.100">100 записей</system:String>
+    <system:String x:Key="Common.HistorySize.200">200 записей</system:String>
+    <system:String x:Key="Common.HistorySize.500">500 записей</system:String>
+    <system:String x:Key="Common.HistorySize.1000">1000 записей</system:String>
+    <system:String x:Key="Common.HistorySize.Unlimited">Неограниченно</system:String>
+    <system:String x:Key="Common.HistorySize.None">Не сохранять</system:String>
+    <system:String x:Key="Common.SilentOcrLang">Язык тихого OCR/перевода скриншотов</system:String>
+    <system:String x:Key="Common.SourceLangIfAuto">Язык для использования при автоопределении</system:String>
+    <system:String x:Key="Common.TargetLangIfSourceZh">Целевой язык, если исходный — китайский</system:String>
+    <system:String x:Key="Common.TargetLangIfSourceNotZh">Целевой язык, если исходный не китайский</system:String>
+    <system:String x:Key="Common.HttpTimeout">Тайм-аут запроса (секунды)</system:String>
+
+    <!--  网络配置  -->
+    <system:String x:Key="Network.Title">Настройки сети</system:String>
+    <system:String x:Key="Network.ExternalCall">Внешний вызов службы (без прокси)</system:String>
+    <system:String x:Key="Network.ExternalCallPort">Порт внешнего вызова</system:String>
+    <system:String x:Key="Network.ProxySettings">Настройки прокси</system:String>
+    <system:String x:Key="Network.Server">Сервер</system:String>
+    <system:String x:Key="Network.Port">Порт</system:String>
+    <system:String x:Key="Network.ProxyAuth">Аутентификация прокси</system:String>
+    <system:String x:Key="Network.Username">Имя пользователя</system:String>
+    <system:String x:Key="Network.Password">Пароль</system:String>
+    <system:String x:Key="Network.ServerPlaceholder">Введите IP-адрес</system:String>
+    <system:String x:Key="Network.PortPlaceholder">Введите порт</system:String>
+    <system:String x:Key="Network.UsernamePlaceholder">Введите имя пользователя</system:String>
+    <system:String x:Key="Network.PasswordPlaceholder">Введите пароль</system:String>
+
+    <!--  功能配置  -->
+    <system:String x:Key="Function.Title">Настройки функций</system:String>
+    <system:String x:Key="Function.AdjustContentTranslate">Переводить сразу после изменения содержимого</system:String>
+    <system:String x:Key="Function.ChangedLang2Execute">Переводить сразу после смены языка</system:String>
+    <system:String x:Key="Function.UsePasteOutput">Использовать буфер обмена для вывода заменяющего перевода</system:String>
+    <system:String x:Key="Function.UseFormsCopy">Проблема с занятостью буфера обмена</system:String>
+    <system:String x:Key="Function.ScreenshotOcrAutoCopyText">Автоматически копировать текст после OCR скриншота</system:String>
+    <system:String x:Key="Function.LineBreakHandler">Обработка переносов строк</system:String>
+    <system:String x:Key="Function.LineBreakOCRHandler">Обработка переносов строк в OCR</system:String>
+    <system:String x:Key="Function.OcrAutoCopyText">Автоматически копировать после OCR</system:String>
+    <system:String x:Key="Function.OcrChangedLang2Execute">Распознавать после смены службы/языка OCR</system:String>
+    <system:String x:Key="Function.IncrementalTranslation">Инкрементный перевод</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate">Автоматически копировать после перевода</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.NoAction">Нет действия</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.First">Первый</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.Second">Второй</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.Third">Третий</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.Fourth">Четвертый</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.Fifth">Пятый</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.Sixth">Шестой</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.Seventh">Седьмой</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.Eighth">Восьмой</system:String>
+    <system:String x:Key="Function.CopyResultAfterTranslate.Last">Последний</system:String>
+    <system:String x:Key="Function.HotkeyCopySuccessToast">Показывать уведомление об успешном копировании для горячей клавиши</system:String>
+    <system:String x:Key="Function.OcrImageQuality">Качество изображения OCR</system:String>
+
+    <!--  显示配置  -->
+    <system:String x:Key="Display.Title">Настройки отображения</system:String>
+    <system:String x:Key="Display.HideOnStart">Скрывать главное окно при запуске</system:String>
+    <system:String x:Key="Display.DisableNoticeOnStart">Отключить уведомления при запуске</system:String>
+    <system:String x:Key="Display.UseCacheLocation">Использовать кэшированное расположение при запуске</system:String>
+    <system:String x:Key="Display.AnimationSpeed">Скорость анимации</system:String>
+    <system:String x:Key="Display.ShowMainPlaceholder">Заполнитель поля ввода</system:String>
+    <system:String x:Key="Display.OnlyShowRet">Показывать только интерфейс вывода</system:String>
+    <system:String x:Key="Display.HideLangWhenOnlyShowOutput">Скрывать языковое поле при отображении только вывода</system:String>
+    <system:String x:Key="Display.TriggerShowHide">Переключать отображение/скрытие при повторном вызове</system:String>
+    <system:String x:Key="Display.MainViewMaxHeight">Макс. высота главного окна [WIE]</system:String>
+    <system:String x:Key="Display.MainViewWidth">Ширина главного окна [WIE]</system:String>
+    <system:String x:Key="Display.TitleMaxWidth">Максимальная ширина имени службы в интерфейсе вывода</system:String>
+    <system:String x:Key="Display.PromptMaxWidth">Максимальная ширина имени подсказки в интерфейсе вывода</system:String>
+    <system:String x:Key="Display.InputViewMaxHeight">Макс. высота поля ввода [WIE]</system:String>
+    <system:String x:Key="Display.FollowMouse">Окно следует за мышью</system:String>
+    <system:String x:Key="Display.ShowAuxiliaryLine">Направляющие линии скриншота</system:String>
+    <system:String x:Key="Display.MainViewShadow">Тень главного окна (влияет на производительность)</system:String>
+    <system:String x:Key="Display.PromptToggleVisible">Показывать переключатель подсказок в главном окне</system:String>
+    <system:String x:Key="Display.CloseUIOcrRetTranslate">Закрывать окно после перевода по клику в OCR</system:String>
+    <system:String x:Key="Display.KeepTopmostAfterMousehook">Держать поверх всех окон после выхода из выделения мышью</system:String>
+    <system:String x:Key="Display.ShowCopyOnHeader">Показывать кнопки в заголовке результата перевода</system:String>
+    <system:String x:Key="Display.CaretLast">Перемещать курсор в конец при отображении главного окна [WIE]</system:String>
+
+    <!--  图标配置  -->
+    <system:String x:Key="Icon.Title">Настройка значков</system:String>
+    <system:String x:Key="Icon.ShowSnakeCopyBtn">Показывать кнопку копирования в snake_case</system:String>
+    <system:String x:Key="Icon.ShowSmallHumpCopyBtn">Показывать кнопку копирования в camelCase</system:String>
+    <system:String x:Key="Icon.ShowLargeHumpCopyBtn">Показывать кнопку копирования в PascalCase</system:String>
+    <system:String x:Key="Icon.ShowTranslateBackBtn">Показывать кнопку обратного перевода</system:String>
+    <system:String x:Key="Icon.ShowClose">Показывать значок закрытия</system:String>
+    <system:String x:Key="Icon.StayMainViewWhenLoseFocus">Оставлять главное окно при потере фокуса</system:String>
+    <system:String x:Key="Icon.ShowMinimalBtn">Показывать значок сворачивания</system:String>
+    <system:String x:Key="Icon.ShowPreference">Показывать значок настроек</system:String>
+    <system:String x:Key="Icon.ShowConfigureService">Показывать значок настройки сервисов</system:String>
+    <system:String x:Key="Icon.ShowMainOcrLang">Показывать значок выбора языка длятихого OCR/перевода скриншотов</system:String>
+    <system:String x:Key="Icon.ShowMousehook">Показывать значок выделения мышью</system:String>
+    <system:String x:Key="Icon.ShowAutoTranslate">Показывать значок автоматического перевода</system:String>
+    <system:String x:Key="Icon.ShowIncrementalTranslation">Показывать значок инкрементного перевода</system:String>
+    <system:String x:Key="Icon.ShowOnlyShowRet">Показывать значок "Только вывод"</system:String>
+    <system:String x:Key="Icon.ShowTopmost">Показывать значок "Поверх всех окон"</system:String>
+    <system:String x:Key="Icon.ShowScreenshot">Показывать значок перевода скриншотов</system:String>
+    <system:String x:Key="Icon.ShowOCR">Показывать значок OCR</system:String>
+    <system:String x:Key="Icon.ShowSilentOCR">Показывать значок тихого OCR</system:String>
+    <system:String x:Key="Icon.ShowQRCode">Показывать значок распознавания QR-кода</system:String>
+    <system:String x:Key="Icon.ShowHistory">Показывать значок истории</system:String>
+    <system:String x:Key="Icon.ShowClipboardMonitor">Показывать значок мониторинга буфера обмена</system:String>
+    <system:String x:Key="Icon.ShowReplaceTranslate">Показывать значок заменяющего перевода</system:String>
+    <system:String x:Key="Icon.ShowTTS">Показывать значок TTS</system:String>
+    <system:String x:Key="Icon.ShowCopy">Показывать значок копирования</system:String>
+    <system:String x:Key="Icon.ShowCopySource">Показывать значок копирования источника</system:String>
+    <system:String x:Key="Icon.ShowCopyAll">Показывать значок "Копировать все"</system:String>
+    <system:String x:Key="Icon.ShowCopyAllSource">Показывать значок "Копировать весь исходный текст"</system:String>
+    <system:String x:Key="Icon.ShowCopyAllResult">Показывать значок "Копировать все результаты"</system:String>
+    <system:String x:Key="Icon.ShowCopyAllSourceResult">Показывать значок "Копировать весь исходный текст и результат"</system:String>
+    <system:String x:Key="Icon.ShowCopyAllSourceAndResult">Показывать значок "Копировать весь исходный текст и результат"</system:String>
+    <system:String x:Key="Icon.ShowCopyAllSourceWithResult">Показывать значок "Копировать весь исходный текст с результатом"</system:String>
+    <system:String x:Key="Icon.ShowCopyAllResultWithSource">Показывать значок "Копировать все результаты с исходным текстом"</system:String>
+
+    <!--  工具提示  -->
+    <system:String x:Key="Tooltip.AutoStartTip">Автоматически запускать программу при загрузке системы (для текущего пользователя)</system:String>
+    <system:String x:Key="Tooltip.StartModeTip">Включить режим администратора и при желании пропустить запрос UAC</system:String>
+    <system:String x:Key="Tooltip.AutoCheckUpdateTip">Автоматически проверять наличие обновлений раз в 24 часа</system:String>
+    <system:String x:Key="Tooltip.DownloadProxyTip">Метод прокси, используемый для загрузки ресурсов Github (установочные пакеты программного обеспечения, пакеты автономных ресурсов)</system:String>
+    <system:String x:Key="Tooltip.AppLanguageTip">Переключить языковую версию приложения</system:String>
+    <system:String x:Key="Tooltip.AutoTranslateTip">Автоматически переводить после ввода содержимого</system:String>
+    <system:String x:Key="Tooltip.ThemeSelectionTip">Светлая тема, темная тема, следовать системному режиму Windows, следовать системному режиму приложений</system:String>
+    <system:String x:Key="Tooltip.FontSelectionTip">Выбрать из системных шрифтов</system:String>
+    <system:String x:Key="Tooltip.GlobalFontSizeTip">Глобальная настройка размера шрифта</system:String>
+    <system:String x:Key="Tooltip.DisableGlobalHotkeysTip">Отключить ли глобальные горячие клавиши</system:String>
+    <system:String x:Key="Tooltip.IgnoreHotkeysOnFullscreenTip">Отключать глобальные горячие клавиши, когда приложение находится в полноэкранном режиме на мониторе, где находится мышь (рекомендуется для игр)</system:String>
+    <system:String x:Key="Tooltip.OftenUsedLangTip">Настроить список языков, отображаемый при выборе языков</system:String>
+    <system:String x:Key="Tooltip.LangDetectTip">Метод определения языка</system:String>
+    <system:String x:Key="Tooltip.LangDetectRatioTip">Только для локального определения китайско-английского языка: отношение английских символов к общему количеству символов</system:String>
+    <system:String x:Key="Tooltip.WordPickingIntervalTip">Увеличить интервал выбора слов для случаев, когда выбор слов не работает в некоторых приложениях</system:String>
+    <system:String x:Key="Tooltip.DoubleTapTrayFuncTip">Выбор функции для двойного щелчка по значку в трее</system:String>
+    <system:String x:Key="Tooltip.HistorySizeTip">Максимальное количество записей в истории</system:String>
+    <system:String x:Key="Tooltip.SilentOcrLangTip">Язык для тихого OCR/перевода скриншотов&#13;Можно быстро переключить с помощью значка в главном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.SourceLangIfAutoTip">Язык, который будет использоваться, если определение по-прежнему возвращает «авто»&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
+    <system:String x:Key="Tooltip.TargetLangIfSourceZhTip">Язык, который будет использоваться, если цель — «авто», а источник — китайский</system:String>
+    <system:String x:Key="Tooltip.TargetLangIfSourceNotZhTip">Язык, который будет использоваться, если цель — «авто», а источник — не китайский</system:String>
+    <system:String x:Key="Tooltip.HttpTimeoutTip">Тайм-аут для запросов к сервисам в секундах</system:String>
+    <system:String x:Key="Tooltip.ExternalCallTip">Включить ли внешние вызовы служб</system:String>
+    <system:String x:Key="Tooltip.ExternalCallPortTip">Настроить порт службы для внешних вызовов</system:String>
+    <system:String x:Key="Tooltip.ProxySettingsTip">Настроить метод сетевого прокси&#13;Прямое подключение для локальных адресов</system:String>
+    <system:String x:Key="Tooltip.ServerTip">IP-адрес прокси-сервера</system:String>
+    <system:String x:Key="Tooltip.PortTip">Порт прокси-сервера</system:String>
+    <system:String x:Key="Tooltip.ProxyAuthTip">Прокси-сервер требует аутентификации</system:String>
+    <system:String x:Key="Tooltip.UsernameTip">Имя пользователя прокси-сервера</system:String>
+    <system:String x:Key="Tooltip.PasswordTip">Пароль прокси-сервера</system:String>
+    <system:String x:Key="Tooltip.AdjustContentTranslateTip">Переводить ли сразу после корректировки содержимого в главном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ChangedLang2ExecuteTip">Переводить сразу после изменения выбора языка в главном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.UsePasteOutputTip">Использовать буфер обмена для вывода замещающего перевода, когда результаты неполные, попробуйте включить это вместо имитации вывода с клавиатуры</system:String>
+    <system:String x:Key="Tooltip.UseFormsCopyTip">Если буфер обмена занят, попробуйте включить эту конфигурацию</system:String>
+    <system:String x:Key="Tooltip.ScreenshotOcrAutoCopyTextTip">Автоматически копировать текстовое содержимое после OCR скриншота</system:String>
+    <system:String x:Key="Tooltip.LineBreakHandlerTip">Обработка переноса строк для выбора слов, перевода скриншотов, буфера обмена и сценариев тихого OCR</system:String>
+    <system:String x:Key="Tooltip.LineBreakOCRHandlerTip">Обработка переноса строк для интерфейса OCR</system:String>
+    <system:String x:Key="Tooltip.OcrAutoCopyTextTip">Автоматически копировать текстовое содержимое после распознавания OCR</system:String>
+    <system:String x:Key="Tooltip.OcrChangedLang2ExecuteTip">Переводить сразу после выбора службы или языка на странице OCR</system:String>
+    <system:String x:Key="Tooltip.IncrementalTranslationTip">При включении постепенно добавлять текст для перевода</system:String>
+    <system:String x:Key="Tooltip.CopyResultAfterTranslateTip">Настройте, какой результат перевода копировать после завершения перевода</system:String>
+    <system:String x:Key="Tooltip.HotkeyCopySuccessToastTip">Показывать ли всплывающее уведомление об успешном копировании для горячей клавиши&#13;Можно отключить, если при включенном автокопировании после перевода появляется слишком много всплывающих окон</system:String>
+    <system:String x:Key="Tooltip.OcrImageQualityTip">Выбор качества изображения для распознавания текста</system:String>
+    <system:String x:Key="Tooltip.HideOnStartTip">Не показывать главный интерфейс при запуске</system:String>
+    <system:String x:Key="Tooltip.DisableNoticeOnStartTip">Не показывать уведомления при запуске</system:String>
+    <system:String x:Key="Tooltip.UseCacheLocationTip">Использовать ли последнее открытое положение при запуске программного обеспечения</system:String>
+    <system:String x:Key="Tooltip.AnimationSpeedTip">Скорость анимации при отображении основного интерфейса</system:String>
+    <system:String x:Key="Tooltip.ShowMainPlaceholderTip">Показывать ли подсказку-заполнитель в поле ввода основного интерфейса</system:String>
+    <system:String x:Key="Tooltip.OnlyShowRetTip">Показывать ли в основном интерфейсе только часть с результатами вывода</system:String>
+    <system:String x:Key="Tooltip.HideLangWhenOnlyShowOutputTip">Скрывать ли языковой интерфейс при отображении только результатов вывода</system:String>
+    <system:String x:Key="Tooltip.TriggerShowHideTip">Повторный триггер показывает интерфейс (когда он скрыт)/скрывает интерфейс (когда он показан)</system:String>
+    <system:String x:Key="Tooltip.MainViewMaxHeightTip">Отрегулируйте максимальную высоту основного интерфейса</system:String>
+    <system:String x:Key="Tooltip.MainViewWidthTip">Отрегулируйте ширину основного интерфейса</system:String>
+    <system:String x:Key="Tooltip.TitleMaxWidthTip">Максимальная ширина имени службы в интерфейсе вывода</system:String>
+    <system:String x:Key="Tooltip.PromptMaxWidthTip">Максимальная ширина имени подсказки в интерфейсе вывода</system:String>
+    <system:String x:Key="Tooltip.InputViewMaxHeightTip">Отрегулируйте максимальную высоту поля ввода</system:String>
+    <system:String x:Key="Tooltip.FollowMouseTip">Положение всплывающего окна главного окна следует за положением мыши&#13;для ввода, скриншота, выбора слова и перевода с мониторингом буфера обмена</system:String>
+    <system:String x:Key="Tooltip.ShowAuxiliaryLineTip">Показывать ли направляющие линии при создании скриншотов</system:String>
+    <system:String x:Key="Tooltip.MainViewShadowTip">Показывать ли тень для главного окна&#13;Может повлиять на производительность, выбирайте в соответствии с вашими потребностями</system:String>
+    <system:String x:Key="Tooltip.PromptToggleVisibleTip">Показывать ли кнопку переключения подсказок в пользовательском интерфейсе вывода основного интерфейса</system:String>
+    <system:String x:Key="Tooltip.CloseUIOcrRetTranslateTip">Закрыть окно OCR во время перевода после нажатия кнопки перевода в интерфейсе OCR</system:String>
+    <system:String x:Key="Tooltip.KeepTopmostAfterMousehookTip">Держать окно поверх всех после выхода из функции выбора мышью</system:String>
+    <system:String x:Key="Tooltip.ShowCopyOnHeaderTip">Показывать ли кнопки TTS и копирования вверху, когда результат перевода свернут</system:String>
+    <system:String x:Key="Tooltip.CaretLastTip">Переместить курсор в конец при активации окна</system:String>
+    <system:String x:Key="Tooltip.ShowSnakeCopyBtnTip">Показывать ли кнопку копирования результата в виде змеиного регистра в пользовательском интерфейсе вывода основного интерфейса</system:String>
+    <system:String x:Key="Tooltip.ShowSmallHumpCopyBtnTip">Показывать ли кнопку копирования результата в верблюжьем регистре в пользовательском интерфейсе вывода основного интерфейса</system:String>
+    <system:String x:Key="Tooltip.ShowLargeHumpCopyBtnTip">Показывать ли кнопку копирования результата в паскаль-регистре в пользовательском интерфейсе вывода основного интерфейса</system:String>
+    <system:String x:Key="Tooltip.ShowTranslateBackBtnTip">Показывать ли кнопку обратного перевода в пользовательском интерфейсе вывода основного интерфейса</system:String>
+    <system:String x:Key="Tooltip.ShowCloseTip">Показывать значок закрытия в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.StayMainViewWhenLoseFocusTip">Не скрывать основной интерфейс при потере фокуса</system:String>
+    <system:String x:Key="Tooltip.ShowMinimalBtnTip">Показывать значок сворачивания в основном интерфейсе, не скрывать основной интерфейс при потере фокуса</system:String>
+    <system:String x:Key="Tooltip.ShowPreferenceTip">Показывать значок настроек в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowConfigureServiceTip">Показывать значок конфигурации службы в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowMainOcrLangTip">Значок выбора языка для тихого OCR/перевода скриншотов</system:String>
+    <system:String x:Key="Tooltip.ShowMousehookTip">Показывать значок выбора мышью в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowAutoTranslateTip">Показывать значок автоматического перевода в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowIncrementalTranslationTip">Показывать значок инкрементного перевода в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowOnlyShowRetTip">Показывать значок интерфейса только для вывода в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowScreenshotTip">Показывать значок перевода скриншотов в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowOCRTip">Показывать значок OCR в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowSilentOCRTip">Показывать значок тихого OCR в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowClipboardMonitorTip">Показывать значок монитора буфера обмена в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowQRCodeTip">Показывать значок распознавания QR-кода в основном интерфейсе</system:String>
+    <system:String x:Key="Tooltip.ShowHistoryTip">Показывать значок истории в основном интерфейсе</system:String>
+
+    <!--#endregion-->
+
+    <!--#region Hotkey 设置项-->
+
+    <system:String x:Key="Hotkey.Title">Настройка горячих клавиш</system:String>
+    <system:String x:Key="Hotkey.GlobalHotkey">Глобальные горячие клавиши</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey">Программные горячие клавиши</system:String>
+    <system:String x:Key="Hotkey.InputTranslate">Перевод ввода</system:String>
+    <system:String x:Key="Hotkey.CrosswordTranslate">Перевод выделенного слова</system:String>
+    <system:String x:Key="Hotkey.ScreenshotTranslate">Перевод скриншота</system:String>
+    <system:String x:Key="Hotkey.ReplaceTranslate">Заменить перевод</system:String>
+    <system:String x:Key="Hotkey.ShowInterface">Показать интерфейс</system:String>
+    <system:String x:Key="Hotkey.MouseCrossword">Выделение мышью</system:String>
+    <system:String x:Key="Hotkey.OCR">Распознавание текста</system:String>
+    <system:String x:Key="Hotkey.SilentOCR">Тихое OCR</system:String>
+    <system:String x:Key="Hotkey.ClipboardMonitor">Монитор буфера обмена</system:String>
+    <system:String x:Key="Hotkey.SilentTTS">Тихий TTS</system:String>
+    <system:String x:Key="Hotkey.SaveConfig">Сохранить</system:String>
+    <system:String x:Key="Hotkey.CancelModify">Отмена</system:String>
+    <system:String x:Key="Hotkey.HotkeyConflict">Конфликт горячих клавиш</system:String>
+    <system:String x:Key="Hotkey.ShortcutKey">Сочетание клавиш</system:String>
+    <system:String x:Key="Hotkey.Function">Функция</system:String>
+
+    <!--  软件热键  -->
+    <system:String x:Key="Hotkey.SoftHotkey.ESC">Скрыть/выйти из интерфейса (также отменяет любой ожидающий запрос: перевод, OCR, TTS)</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.OpenSettings">Открыть настройки</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.OpenHistory">Открыть историю</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ToggleAutoTranslate">Включить/отключить автоматический перевод</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ToggleIncrementalTranslation">Включить/отключить инкрементный перевод</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ToggleInputBox">Скрыть/показать поле ввода</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ResetWindowPosition">Сбросить положение окна в центр основного монитора</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ToggleTopmost">Закрепить/открепить</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.SwitchTheme">Переключить тему (авто/светлая/темная)</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.SaveToVocabulary">Сохранить в словарь</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ExitProgram">Выйти из программы</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ZoomInText">Увеличить текст в поле ввода/вывода с помощью Ctrl+прокрутка</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ZoomOutText">Уменьшить текст в поле ввода/вывода с помощью Ctrl+прокрутка</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ResetTextSize">Сбросить размер шрифта текстового поля до значения по умолчанию</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.CopyTranslationByService">Копировать результаты перевода по порядку служб</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.CopyLastTranslation">Копировать результат перевода последней службы</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.TTSInput">TTS для вводимого содержимого</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.TTSByService">TTS для результатов перевода по порядку служб</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.TTSLastTranslation">TTS для результата перевода последней службы</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ZoomInUI">Увеличить интерфейс (ширина, макс. высота)</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ZoomOutUI">Уменьшить интерфейс (ширина, макс. высота)</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ResetUI">Сбросить интерфейс до значений по умолчанию (ширина, макс. высота)</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.IncreaseWidth">Увеличить ширину</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.DecreaseWidth">Уменьшить ширину</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.IncreaseMaxHeight">Увеличить макс. высоту</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.DecreaseMaxHeight">Уменьшить макс. высоту</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.DecreaseFontSize">Уменьшить глобальный размер шрифта</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.IncreaseFontSize">Увеличить глобальный размер шрифта</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ResetFontSize">Сбросить глобальный шрифт до значения по умолчанию</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ToggleLineBreakMode">Переключить режим обработки переноса строк</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.ToggleBackTranslation">Включить/отключить обратный перевод</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.Key.CtrlWithMouseWheelUp">Ctrl + колесо мыши вверх</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.Key.CtrlWithMouseWheelDown">Ctrl + колесо мыши вниз</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.Key.CtrlWithReturn">Ctrl + щелчок по значку переноса строки</system:String>
+    <system:String x:Key="Hotkey.SoftHotkey.Key.CtrlWithTransBack">Ctrl + щелчок по значку обратного перевода</system:String>
+
+    <!--#endregion-->
+
+    <!--#region Service 设置项-->
+
+    <system:String x:Key="Service.Navi.Translator">Перевод текста</system:String>
+    <system:String x:Key="Service.Navi.OCR">Распознавание текста</system:String>
+    <system:String x:Key="Service.Navi.TTS">Синтез речи</system:String>
+    <system:String x:Key="Service.Navi.VocabularyBook">Словарь</system:String>
+    <system:String x:Key="Service.Translator.Title">Перевод текста</system:String>
+    <system:String x:Key="Service.Translator.SubTitle">Конфигурация поддержки основных служб для функции перевода.</system:String>
+    <system:String x:Key="Service.Translator.Duplicate">Создать дубликат</system:String>
+    <system:String x:Key="Service.Translator.Delete">Удалить переводчик</system:String>
+    <system:String x:Key="Service.OCR.Title">Распознавание текста</system:String>
+    <system:String x:Key="Service.OCR.SubTitle">Службы распознавания текста. Добавьте свою службу OCR и выберите ее для использования</system:String>
+    <system:String x:Key="Service.TTS.Title">Распознавание текста</system:String>
+    <system:String x:Key="Service.TTS.SubTitle">Сервисы преобразования текста в речь. Добавьте свой сервис TTS и выберите его для использования</system:String>
+    <system:String x:Key="Service.VocabularyBook.Title">Словарь</system:String>
+    <system:String x:Key="Service.VocabularyBook.SubTitle">Хранить текст в онлайн-словаре</system:String>
+    <system:String x:Key="Service.Name">Имя:</system:String>
+    <system:String x:Key="Service.Type">Тип:</system:String>
+    <system:String x:Key="Service.Api">Api:</system:String>
+    <system:String x:Key="Service.AutoExecute">Автовыполнение:</system:String>
+    <system:String x:Key="Service.AutoExecute.Tooltip">Автоматически переводить при выполнении перевода, в противном случае вам нужно нажать вручную, чтобы перевести</system:String>
+    <system:String x:Key="Service.AutoTransBack">AEBack:</system:String>
+    <system:String x:Key="Service.AutoTransBack.Tooltip">Автоматически выполнять обратный перевод при выполнении перевода, в противном случае вам нужно нажать вручную, чтобы выполнить обратный перевод</system:String>
+    <system:String x:Key="Service.LinkTest">Проверка связи:</system:String>
+    <system:String x:Key="Service.Verify">Проверить</system:String>
+    <system:String x:Key="Service.Icon">Значок</system:String>
+    <system:String x:Key="Service.Terms">Термины:</system:String>
+    <system:String x:Key="Service.Domains">Домены:</system:String>
+    <system:String x:Key="Service.QwenMT.Domains">Информация о доменах</system:String>
+    <system:String x:Key="Service.OpenInBrower">Открыть в браузере</system:String>
+    <system:String x:Key="Service.EnterOfficialWebsite">Перейти на официальный сайт</system:String>
+    <system:String x:Key="Service.Version">Версия:</system:String>
+    <system:String x:Key="Service.Update">Обновить</system:String>
+    <system:String x:Key="Service.Duplicate">Дублировать</system:String>
+    <system:String x:Key="Service.Delete">Удалить</system:String>
+    <system:String x:Key="Service.Model">Модель:</system:String>
+    <system:String x:Key="Service.Prompt.Info">Настраивая поведение LLM с помощью пользовательской подсказки, $target будет заменен целевым языком</system:String>
+    <system:String x:Key="Service.Translator.Prompt.Info">Настраивая поведение LLM с помощью пользовательской подсказки, $source, $target, $content будут заменены исходным языком, целевым языком и переводимым текстом.</system:String>
+    <system:String x:Key="Service.Thinking">Мышление:</system:String>
+    <system:String x:Key="Service.Thinking.Tooltip">Этот параметр поддерживается только GLM-4.5 и выше. Управляет, включена ли для большой модели цепочка мыслей.</system:String>
+    <system:String x:Key="Service.Temperature">Температура:</system:String>
+    <system:String x:Key="Service.Temperature.Tooltip">В контексте языковых моделей это параметр, который контролирует разнообразие текста, генерируемого моделью. Степень уверенности и случайности, с которой модель делает свои следующие предсказания слов</system:String>
+    <system:String x:Key="Service.OCR.GeminiApi">Не рекомендуется заполнять часть Path адреса API, если вы точно не знаете, что делаете. Например, адрес OpenAI API — https://api.openai.com/v1/chat/completions, где Path — /v1/chat/completions</system:String>
+    <system:String x:Key="Service.OCR.GoogleLocation">Расположение слова:</system:String>
+    <system:String x:Key="Service.OCR.GoogleLocation.Tooltip">Находить ли каждое слово при получении результатов</system:String>
+    <system:String x:Key="Service.OpenAI.Info1">Если в адресе API нет пути, он будет автоматически заполнен как /v1/chat/completions</system:String>
+    <system:String x:Key="Service.OpenAI.Info2">Например, адрес интерфейса OpenAI — https://api.openai.com/v1/chat/completions, где Path — /v1/chat/completions</system:String>
+    <system:String x:Key="Service.OpenAI.Info3">Если у вас все еще есть сомнения, пожалуйста, нажмите на эту ссылку</system:String>
+    <system:String x:Key="Service.OpenRouter.Info1">Если в адресе API нет пути, он будет автоматически заполнен как /api/v1/chat/completions</system:String>
+    <system:String x:Key="Service.OpenRouter.Info2">Например, адрес интерфейса OpenRouter — https://openrouter.ai/api/v1/chat/completions, где Path — /api/v1/chat/completions</system:String>
+    <system:String x:Key="Service.OCR.PaddleOCR.Data">Пакет данных:</system:String>
+    <system:String x:Key="Service.OCR.PaddleOCR.Download">Скачать</system:String>
+    <system:String x:Key="Service.OCR.PaddleOCR.Check">Проверить</system:String>
+    <system:String x:Key="Service.OCR.PaddleOCR.CPUNotSupported">Архитектура ЦП не поддерживается</system:String>
+    <system:String x:Key="Service.OCR.PaddleOCR.InComplete">Автономные данные неполные, перейдите на страницу конфигурации PaddleOCR, чтобы загрузить их</system:String>
+    <system:String x:Key="Service.OCR.Tencent.Version.Tooltip">Версия с высокой точностью не поддерживает выбор языка</system:String>
+    <system:String x:Key="Service.OCR.WechatOCR.Path">Путь:</system:String>
+    <system:String x:Key="Service.OCR.WechatOCR.Path.Info">По умолчанию путь не имеет номера версии. Программное обеспечение автоматически найдет информацию о номере версии, записанную WeChat в реестре, чтобы WeChat можно было использовать в обычном режиме без обновления. Однако иногда WeChat, установленный с помощью scoop или других методов, не обновляет номер версии в реестре вовремя. Поэтому, если вы не можете найти путь WeChat, пожалуйста, укажите полный путь с номером версии, например, 'D:\scoop\WeChat\[3.9.12.11]'</system:String>
+    <system:String x:Key="Service.OCR.WechatOCR.Dll.Info">При вызове службы она автоматически загрузит динамические библиотеки mmmojo.dll и mmmojo_64.dll в указанный выше путь WeChat для реализации вызова функции. Если вы столкнулись с тем, что его нельзя использовать после обновления WeChat, вы можете попробовать очистить его и повторить попытку</system:String>
+    <system:String x:Key="Service.Clear">Очистить</system:String>
+    <system:String x:Key="Service.ClearDll">Очистить Dll</system:String>
+<system:String x:Key="Service.Translator.ChatGLM">Если адрес API не включает путь, он будет автоматически заполнен как /api/paas/v4/chat/completions&#13;Например, если адрес OpenAI API — https://api.openai.com/v1/chat/completions, то Path — /v1/chat/completions</system:String>
+    <system:String x:Key="Service.Translator.Claude">Если адрес API не включает путь, он будет автоматически заполнен как /v1/messages&#13;Например, если адрес OpenAI API — https://api.openai.com/v1/chat/completions, то Path — /v1/chat/completions</system:String>
+    <system:String x:Key="Service.Translator.DeepL.UsageSearch">Использование:</system:String>
+    <system:String x:Key="Service.Translator.DeepL.Search">Поиск</system:String>
+    <system:String x:Key="Service.Translator.DeepLX.Token">Не нужно заполнять, если нет в наличии</system:String>
+    <system:String x:Key="Service.Translator.ECDict.Home">Главная</system:String>
+    <system:String x:Key="Service.Translator.ECDict.ProjectHome">Главная страница проекта</system:String>
+    <system:String x:Key="Service.Translator.ECDict.Description">Поддерживает только английские слова, а не перевод предложений</system:String>
+    <system:String x:Key="Service.Translator.ECDict.Tip">Локальный сервис, требуется загрузка файла словаря</system:String>
+    <system:String x:Key="Service.Description">Описание</system:String>
+    <system:String x:Key="Service.Translator.STranslate.Mode">Режим:</system:String>
+    <system:String x:Key="Service.Translator.STranslate.Mode.Tooltip">Если перевод в одном режиме не удался, переключитесь на другой. Поставщики услуг могут вводить ограничения на высокочастотный доступ за короткое время.</system:String>
+    <system:String x:Key="Service.Translator.STranslate.Tip">Локальный сервис, не требует настройки</system:String>
+    <system:String x:Key="Service.STranslate">Локальный сервис</system:String>
+    <system:String x:Key="Service.Translator.Tencent.ProjectID">ID проекта:</system:String>
+    <system:String x:Key="Service.Translator.Tencent.Region">Регион:</system:String>
+    <system:String x:Key="Service.TTS.Voice">Голос:</system:String>
+    <system:String x:Key="Service.TTS.Lingva">Эта услуга зависит от языковых настроек. Пожалуйста, выберите доступные услуги в Общие настройки - Общая конфигурация - Распознавание языка. Иногда она может работать неправильно из-за проблем с сетью или службой (обратите внимание, что локальное распознавание в настоящее время поддерживает только китайский и английский языки. Пожалуйста, избегайте использования локального распознавания с Lingva для операций преобразования текста в речь на языках, отличных от китайского и английского)</system:String>
+    <system:String x:Key="Service.TTS.Speed">Скорость:</system:String>
+    <system:String x:Key="Service.TTS.Speed.Tooltip">Установите скорость речи для оффлайн TTS.</system:String>
+    <system:String x:Key="Service.TTS.Offline">Получить системные поддерживаемые голоса</system:String>
+    <system:String x:Key="Service.VocabularyBook.Maimemo">В ходе фактического тестирования, если вы добавляете такое слово, как «stranslate», API отвечает успешно, но оно не появляется в списке слов. Пожалуйста, примите к сведению.</system:String>
+    <system:String x:Key="Service.DescriptionTitle">Описание:</system:String>
+    <system:String x:Key="Service.DeerAPI.Description">Платформа агрегации ИИ, доступ в один клик к 500+ моделям, скидка 30%, полная поддержка последних версий GPT4o, Grok 3, Gemini 2.5pro!</system:String>
+    <system:String x:Key="Service.DeerAPI.Promotion">Зарегистрируйтесь и получите пробный кредит.</system:String>
+
+    <!--#endregion-->
+
+    <!--#region Replace 设置项-->
+
+    <system:String x:Key="Replace.Translator">Заменить службу перевода</system:String>
+    <system:String x:Key="Replace.Translator.Tooltip">Выберите заменяющую службу перевода</system:String>
+    <system:String x:Key="Replace.Source">Исходный язык</system:String>
+    <system:String x:Key="Replace.Source.Tooltip">Выберите исходный язык перевода</system:String>
+    <system:String x:Key="Replace.Target">Целевой язык</system:String>
+    <system:String x:Key="Replace.Target.Tooltip">Выберите целевой язык перевода</system:String>
+    <system:String x:Key="Replace.DetectTypeWithSourceAuto">Определение языка (действительно только когда исходный язык — авто)</system:String>
+    <system:String x:Key="Replace.DetectTypeWithSourceAuto.Tooltip">Метод определения языка, только когда исходный язык — авто</system:String>
+    <system:String x:Key="Replace.AutoDetectType">Коэффициент определения языка (zh-en)</system:String>
+    <system:String x:Key="Replace.AutoDetectType.Tooltip">Только для локального определения китайско-английского: отношение английских символов к общему количеству символов</system:String>
+    <system:String x:Key="Replace.SourceLangIfAuto">Язык для использования при автоопределении</system:String>
+    <system:String x:Key="Replace.SourceLangIfAuto.Tooltip">Язык, который будет использоваться, если определение по-прежнему возвращает «авто»&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
+    <system:String x:Key="Replace.TargetLangIfSourceZh">Целевой язык, когда исходный — китайский</system:String>
+    <system:String x:Key="Replace.TargetLangIfSourceZh.Tooltip">Язык, который будет использоваться, если цель — авто, а источник — китайский&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
+    <system:String x:Key="Replace.TargetLangIfSourceNotZh">Целевой язык, когда исходный — не китайский</system:String>
+    <system:String x:Key="Replace.TargetLangIfSourceNotZh.Tooltip">Язык, который будет использоваться, если цель — авто, а источник — не китайский&#13;Срабатывает только тогда, когда онлайн-сервис определения возвращает ошибку</system:String>
+
+    <!--#endregion-->
+
+    <!--#region History 设置项-->
+
+    <system:String x:Key="History.Search">Введите поисковый запрос</system:String>
+    <system:String x:Key="History.Refresh">Обновить</system:String>
+    <system:String x:Key="History.Delete">Удалить</system:String>
+    <system:String x:Key="History.Gong">Всего</system:String>
+    <system:String x:Key="History.Xiang">элементов</system:String>
+    <system:String x:Key="History.ClearAl">Очистить все</system:String>
+    <system:String x:Key="History.Content.TTS">TTS</system:String>
+    <system:String x:Key="History.Content.Copy">Копировать</system:String>
+    <system:String x:Key="History.Content.CopyResult">Копировать результат</system:String>
+    <system:String x:Key="History.Content.CopySnakeResult">Копировать в snake_case</system:String>
+    <system:String x:Key="History.Content.CopySmallHumpResult">Копировать в camelCase</system:String>
+    <system:String x:Key="History.Content.CopyLargeHumpResult">Копировать в PascalCase</system:String>
+
+    <!--#endregion-->
+
+    <!--#region Backup 设置项-->
+
+    <system:String x:Key="Backup.BackupType">Метод резервного копирования</system:String>
+    <system:String x:Key="Backup.BackupType.Tooltip">Пожалуйста, выберите метод резервного копирования</system:String>
+    <system:String x:Key="Backup.Address">Адрес</system:String>
+    <system:String x:Key="Backup.Address.Tooltip">Адрес сервера WebDav</system:String>
+    <system:String x:Key="Backup.Address.Placeholder">Пожалуйста, введите адрес WebDav</system:String>
+    <system:String x:Key="Backup.Username">Имя пользователя</system:String>
+    <system:String x:Key="Backup.Username.Tooltip">Имя пользователя сервера WebDav</system:String>
+    <system:String x:Key="Backup.Username.Placeholder">Пожалуйста, введите имя пользователя</system:String>
+    <system:String x:Key="Backup.Password">Пароль</system:String>
+    <system:String x:Key="Backup.Password.Tooltip">Пароль сервера WebDav</system:String>
+    <system:String x:Key="Backup.Password.Placeholder">Пожалуйста, введите пароль</system:String>
+    <system:String x:Key="Backup.Export">Экспорт</system:String>
+    <system:String x:Key="Backup.Import">Импорт</system:String>
+
+    <!--#endregion-->
+
+    <!--#region About 设置项-->
+
+    <system:String x:Key="About.Version">Версия</system:String>
+    <system:String x:Key="About.CheckUpdate">Обновить</system:String>
+    <system:String x:Key="About.CancelCheck">Отмена</system:String>
+    <system:String x:Key="About.Tools">Инструменты</system:String>
+    <system:String x:Key="About.CleanLog">Очистить журналы</system:String>
+    <system:String x:Key="About.OpenDirectory">Открыть папку</system:String>
+    <system:String x:Key="About.LogDirectory">Папка журналов</system:String>
+    <system:String x:Key="About.ConfigDirectory">Папка конфигурации</system:String>
+    <system:String x:Key="About.OpenSource">Открытый исходный код</system:String>
+    <system:String x:Key="About.Author">Автор</system:String>
+    <system:String x:Key="About.Website">Веб-сайт</system:String>
+    <system:String x:Key="About.SourceCode">Исходный код</system:String>
+    <system:String x:Key="About.Feedback">Обратная связь</system:String>
+    <system:String x:Key="About.Thanks">Благодарности</system:String>
+    <system:String x:Key="About.ConfirmClearAllLog">Подтвердить очистку всех журналов?</system:String>
+    <system:String x:Key="About.Warning">Предупреждение</system:String>
+    <system:String x:Key="About.NoUpdateExe">Обновление, похоже, сломано, пожалуйста, перейдите на страницу релиза, чтобы увидеть новую версию</system:String>
+    <system:String x:Key="About.GetNewer">Обнаружена последняя версия</system:String>
+    <system:String x:Key="About.UpdateFailed">Ошибка при проверке обновления, пожалуйста, проверьте состояние сети</system:String>
+    <system:String x:Key="About.Downloading">Программное обеспечение загружается</system:String>
+    <system:String x:Key="About.DownloadSuccess">Программное обеспечение было успешно загружено, вы хотите его обновить?</system:String>
+    <system:String x:Key="About.ClearFiles">Удалить ли все файлы в исходном каталоге программного обеспечения (за исключением log/portable_config) во время этого обновления</system:String>
+
+    <!--#endregion-->
+
+    <!--#region LangSetting-->
+
+    <system:String x:Key="LangSetting.Title">Настройка языка</system:String>
+    <system:String x:Key="LangSetting.UnSelectAll">Снять все</system:String>
+    <system:String x:Key="LangSetting.SelectAll">Выбрать все</system:String>
+
+    <!--#endregion-->
+
+    <!--#region Translator Selector-->
+
+    <system:String x:Key="TranslatorSelector.Title">Выбрать переводчик</system:String>
+    <system:String x:Key="TranslatorSelector.SelfBuild">Самостоятельная сборка</system:String>
+    <system:String x:Key="TranslatorSelector.SelfBuild.Tooltip">Вам необходимо вручную настроить сервер и заполнить API (токен и другую информацию для проверки)</system:String>
+    <system:String x:Key="TranslatorSelector.BuiltIn">Встроенный</system:String>
+    <system:String x:Key="TranslatorSelector.BuiltIn.Tooltip">Его можно использовать сразу после добавления</system:String>
+    <system:String x:Key="TranslatorSelector.Official">Официальный</system:String>
+    <system:String x:Key="TranslatorSelector.Official.Tooltip">Подайте заявку на получение ключа API на официальном сайте и введите ключ API.</system:String>
+
+    <system:String x:Key="ServiceType.SelfBuild">Самостоятельная сборка</system:String>
+    <system:String x:Key="ServiceType.BuiltIn">Встроенный</system:String>
+    <system:String x:Key="ServiceType.Official">Официальный</system:String>
+
+    <!--#endregion-->
+
+    <!--#region WebDav-->
+
+    <system:String x:Key="WebDav.Title">Текущая конфигурация</system:String>
+    <system:String x:Key="WebDav.NoContent">В текущем пути не найдено содержимое резервной копии...</system:String>
+
+    <!--#endregion-->
+
+    <!--#endregion-->
+
+    <!--#region 主界面-->
+
+    <system:String x:Key="Topmost">Закрепить наверху</system:String>
+    <system:String x:Key="WindowClose">Закрыть окно</system:String>
+    <system:String x:Key="WindowMinimized">Свернуть окно</system:String>
+    <system:String x:Key="Preference">Настройки</system:String>
+    <system:String x:Key="ConfigureService">Настроить службу</system:String>
+    <system:String x:Key="SilentOCRLang">Язык тихого OCR/перевода скриншотов</system:String>
+    <system:String x:Key="MouseHook">Слушатель выделения текста мышью</system:String>
+    <system:String x:Key="AutoTranslate">Автоматический перевод</system:String>
+    <system:String x:Key="IncrementalTranslation">Инкрементный перевод</system:String>
+    <system:String x:Key="OnlyShowOutput">Показывать только вывод&#13;Alt+щелчок мыши для управления языковым интерфейсом</system:String>
+    <system:String x:Key="ScreenshotTranslate">Перевод скриншота</system:String>
+    <system:String x:Key="SilentOCR">Тихий OCR</system:String>
+    <system:String x:Key="OCR">OCR</system:String>
+    <system:String x:Key="ClipboardMonitor">Монитор буфера обмена</system:String>
+    <system:String x:Key="QRCode">Распознавание QR-кода</system:String>
+    <system:String x:Key="History">История</system:String>
+    <system:String x:Key="DevelopmentVersion">[В разработке]</system:String>
+
+    <system:String x:Key="Input.SelectAll">Выбрать все</system:String>
+    <system:String x:Key="Input.Copy">Копировать</system:String>
+    <system:String x:Key="Input.Paste">Вставить</system:String>
+    <system:String x:Key="Input.Clear">Очистить</system:String>
+    <system:String x:Key="Input.SaveToVocabulary">Сохранить в словарь</system:String>
+    <system:String x:Key="Input.CopyInputContent">Копировать введенное содержимое</system:String>
+    <system:String x:Key="Input.RemoveLineBreak">Чтобы удалить разрывы строк, Ctrl+щелчок для переключения режима обработки разрывов строк</system:String>
+    <system:String x:Key="Input.RemoveSpaces">Удалить пробелы</system:String>
+    <system:String x:Key="Input.DetectedAs">Определено как</system:String>
+    <system:String x:Key="Input.ValidContent">Пожалуйста, введите действительное содержимое</system:String>
+    <system:String x:Key="Input.Cache">Кэш</system:String>
+    <system:String x:Key="Input.RequestCancel">Запрос отменен</system:String>
+    <system:String x:Key="Input.RequestError">Ошибка запроса</system:String>
+    <system:String x:Key="Input.RequestTimeout">Тайм-аут запроса (пожалуйста, проверьте, в порядке ли сетевое окружение или доступна ли служба)\n</system:String>
+    <system:String x:Key="Input.RequestApi">Запросить API</system:String>
+    <system:String x:Key="Input.ExceptionMsg">Сообщение об исключении</system:String>
+
+    <system:String x:Key="Output.Retry">Повторить</system:String>
+    <system:String x:Key="Output.TextToSpeech">Преобразование текста в речь</system:String>
+    <system:String x:Key="Output.CopyAsLargeCamelCase">Копировать как PascalCase</system:String>
+    <system:String x:Key="Output.CopyAsSmallCamelCase">Копировать как camelCase</system:String>
+    <system:String x:Key="Output.CopyAsSnakeCase">Копировать как snake_case</system:String>
+    <system:String x:Key="Output.CopyDirectly">Копировать результат напрямую</system:String>
+    <system:String x:Key="Output.InsertResult">Вставить результат</system:String>
+    <system:String x:Key="Output.ExecuteTranslation">Перевести</system:String>
+    <system:String x:Key="Output.ExecuteTranslationTooltip">Выполнить перевод текущей службы</system:String>
+    <system:String x:Key="Output.ExecuteBackTranslation">Обратный перевод</system:String>
+    <system:String x:Key="Output.ExecuteBackTranslationTooltip">Выполнить обратный перевод текущей службы</system:String>
+    <system:String x:Key="Output.AutoExecute">Автоперевод</system:String>
+    <system:String x:Key="Output.AutoExecuteTooltip">Автоматически ли переводить при выполнении перевода, в противном случае вам нужно нажать вручную, чтобы перевести, сохранить в файл конфигурации</system:String>
+    <system:String x:Key="Output.AutoBackTranslation">Автоматический обратный перевод</system:String>
+    <system:String x:Key="Output.AutoBackTranslationTooltip">Автоматически ли выполнять обратный перевод при переводе, в противном случае вам нужно нажать вручную, чтобы выполнить обратный перевод, сохранить в файл конфигурации</system:String>
+    <system:String x:Key="Output.ConfigureService">Конфигурация</system:String>
+    <system:String x:Key="Output.ConfigureServiceTooltip">Войти на страницу конфигурации службы</system:String>
+    <system:String x:Key="Output.CloseService">Закрыть службу</system:String>
+    <system:String x:Key="Output.CloseServiceTooltip">Немедленно закрыть службу и сохранить в файл конфигурации</system:String>
+    <system:String x:Key="Output.BackTranslateTooltip">Обратный перевод (Ctrl+щелчок для включения/отключения)</system:String>
+    <system:String x:Key="Output.BackTranslationResultTooltip">Щелкните правой кнопкой мыши дважды, чтобы закрыть содержимое обратного перевода</system:String>
+
+    <!--#endregion-->
+
+    <!--#region 托盘-->
+
+    <system:String x:Key="NotifyIcon.InputTranslate">Вводной перевод</system:String>
+    <system:String x:Key="NotifyIcon.ScreenShotTranslate">Перевод скриншота</system:String>
+    <system:String x:Key="NotifyIcon.MousehookTranslate">Монитор выделения мышью</system:String>
+    <system:String x:Key="NotifyIcon.ClipboardMonitor">Монитор буфера обмена</system:String>
+    <system:String x:Key="NotifyIcon.OCR">OCR</system:String>
+    <system:String x:Key="NotifyIcon.SilentOCR">Тихий OCR</system:String>
+    <system:String x:Key="NotifyIcon.QRCode">QR-код</system:String>
+    <system:String x:Key="NotifyIcon.OpenMainWindow">Открыть окно</system:String>
+    <system:String x:Key="NotifyIcon.OpenPreference">Открыть настройки</system:String>
+    <system:String x:Key="NotifyIcon.ForbiddenShortcuts">Запрещенные ярлыки</system:String>
+    <system:String x:Key="NotifyIcon.Exit">Выход</system:String>
+    <system:String x:Key="NotifyIcon.NewVersion">Выпущена новая версия программного обеспечения, перейдите на страницу «О программе» для обновления</system:String>
+    <system:String x:Key="NotifyIcon.Show.ShortcutDisabled">Горячая клавиша отключена</system:String>
+    <system:String x:Key="NotifyIcon.Show.Input">Ввод</system:String>
+    <system:String x:Key="NotifyIcon.Show.Crossword">Кроссворд</system:String>
+    <system:String x:Key="NotifyIcon.Show.Screenshot">Скриншот</system:String>
+    <system:String x:Key="NotifyIcon.Show.Replace">Заменить</system:String>
+    <system:String x:Key="NotifyIcon.Show.Mainview">Показать</system:String>
+    <system:String x:Key="NotifyIcon.Show.Mouse">Мышь</system:String>
+    <system:String x:Key="NotifyIcon.Show.OCR">OCR</system:String>
+    <system:String x:Key="NotifyIcon.Show.SlientOCR">Тихий OCR</system:String>
+    <system:String x:Key="NotifyIcon.Show.SlientTTS">Тихий TTS</system:String>
+    <system:String x:Key="NotifyIcon.Show.Clipboard">Буфер обмена</system:String>
+
+    <!--#endregion-->
+
+    <!--#region OCR-->
+
+    <system:String x:Key="OCR.CopyImage">Копировать изображение</system:String>
+    <system:String x:Key="OCR.SaveImage">Сохранить изображение</system:String>
+    <system:String x:Key="OCR.FitWindow">По размеру окна</system:String>
+    <system:String x:Key="OCR.SwitchImg">Переключить исходное/аннотированное изображение</system:String>
+    <system:String x:Key="OCR.DropImg">Перетащите изображение сюда</system:String>
+    <system:String x:Key="OCR.QRCodeResult">Результат распознавания QR-кода</system:String>
+    <system:String x:Key="OCR.File">Файл</system:String>
+    <system:String x:Key="OCR.File.Tooltip">Выберите файл изображения для распознавания текста</system:String>
+    <system:String x:Key="OCR.Screenshot">Скриншот</system:String>
+    <system:String x:Key="OCR.Screenshot.Tooltip">Сделайте снимок экрана для распознавания текста</system:String>
+    <system:String x:Key="OCR.Clipboard">Буфер обмена</system:String>
+    <system:String x:Key="OCR.Clipboard.Tooltip">Выполнить распознавание текста в содержимом буфера обмена</system:String>
+    <system:String x:Key="OCR.Setting">Настройки</system:String>
+    <system:String x:Key="OCR.Translate">Перевести</system:String>
+    <system:String x:Key="OCR.QRCode">QR-код</system:String>
+    <system:String x:Key="OCR.Recertification">Распознать</system:String>
+
+    <!--#endregion-->
+
+    <!--#region Prompt-->
+
+    <system:String x:Key="Prompt.Edit">Редактировать подсказку</system:String>
+    <system:String x:Key="Prompt.Delete">Удалить подсказку</system:String>
+    <system:String x:Key="Prompt.Add">Добавить подсказку</system:String>
+    <system:String x:Key="Prompt.Import">Импортировать подсказку&#13;Добавить из файла</system:String>
+    <system:String x:Key="Prompt.Export">Экспортировать подсказку &#13;Экспортировать выбранные элементы по умолчанию &#13;Ctrl+щелчок для экспорта всех</system:String>
+    <system:String x:Key="Prompt.DropImport">Перетащите подсказку сюда</system:String>
+
+    <!--#endregion-->
+
+    <!--#region MessageBox-->
+
+    <system:String x:Key="MessageBox.AlreadyRunning">Приложение уже запущено.</system:String>
+    <system:String x:Key="MessageBox.MultiOpeningDetection">Обнаружение нескольких экземпляров</system:String>
+    <system:String x:Key="MessageBox.HotkeysConflict">Конфликт глобальных горячих клавиш, пожалуйста, измените в настройках программного обеспечения...</system:String>
+    <system:String x:Key="MessageBox.AlreadyListeningWordSelection">В настоящее время отслеживается выделение текста мышью, пожалуйста, сначала отключите отслеживание...</system:String>
+    <system:String x:Key="MessageBox.ContinueReset">Сброс этой конфигурации повлияет на настройки замены перевода, продолжить восстановление?</system:String>
+    <system:String x:Key="MessageBox.Tip">Подсказка</system:String>
+    <system:String x:Key="MessageBox.SupportedVoice">Системные поддерживаемые голоса:</system:String>
+
+    <!--#endregion-->
+
+    <!--#region Toast Terms-->
+    <system:String x:Key="Toast.Terms.EmptyList">Список терминов пуст, экспорт невозможен</system:String>
+    <system:String x:Key="Toast.Terms.ExportTitle">Экспортировать файл терминов</system:String>
+    <system:String x:Key="Toast.Terms.ExportSuccess">Экспортировано {0} записей</system:String>
+    <system:String x:Key="Toast.Terms.ExportFailed">Экспорт не удался</system:String>
+    <system:String x:Key="Toast.Terms.ImportTitle">Выберите файл терминов для импорта</system:String>
+    <system:String x:Key="Toast.Terms.NoValidData">Не найдено действительных данных терминов</system:String>
+    <system:String x:Key="Toast.Terms.ImportReplace">Импортировано и заменено {0} записей</system:String>
+    <system:String x:Key="Toast.Terms.ImportAppend">Импортировано и добавлено {0} записей</system:String>
+    <system:String x:Key="Toast.Terms.ImportFailed">Импорт не удался</system:String>
+    <!--#endregion-->
+
+    <!--#region MessageBox Terms-->
+    <system:String x:Key="MessageBox.Terms.Clear">Очистить термины?</system:String>
+    <system:String x:Key="MessageBox.Terms.ImportTitle">Импортировать термины</system:String>
+    <system:String x:Key="MessageBox.Terms.ImportConfirm" xml:space="preserve">Найдено {0} записей терминов.
+Нажмите [Да], чтобы заменить существующий список терминов
+Нажмите [Нет], чтобы добавить к существующему списку терминов
+Нажмите [Отмена], чтобы отменить операцию импорта</system:String>
+    <!--#endregion-->
+
+</ResourceDictionary>
